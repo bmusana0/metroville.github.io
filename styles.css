@@ -1,0 +1,152 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header, footer {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #0073e6;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    font-size: 0.9em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+    border-color: #0073e6;
+    outline: none;
+}
+
+button {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
+/* Add this to your styles.css file */
+
+header {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    background: White;
+    color: black;
+    padding: 20px;
+}
+
+header .logo {
+    width: 100px;  /* Adjust the width of your logo */
+    height: auto;
+    margin-right: 20px;  /* Space between the logo and the text */
+}
+
+header h1 {
+    font-size: 2em;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: White; /* Optional, if you want a solid color */
+    background-image: url('images/logo.png'); /* Path to your logo image */
+    background-repeat: no-repeat;
+    background-position: left center; /* Adjust the position of the logo */
+    background-size: contain; /* Ensures the logo fits within the header */
+    color: Purple;
+    height: 150px; /* Adjust height as needed */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+}

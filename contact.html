@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - METROVILLE EDGES CO.LTD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="vision.html">Vision</a>
+        <a href="mission.html">Mission</a>
+        <a href="corevalues.html">Core Values</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p>If you have any questions or need more information, please reach out to us using the form below.</p>
+        <form onsubmit="sendEmail(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Display your contact info here -->
+        <div class="contact-info">
+            <h3>Our Contact Information</h3>
+            <p><strong>Email:</strong> <a href="mailto:bmusana0@gmail.com">bmusana0@gmail.com</a></p>
+            <p><strong>Phone:</strong> +256-772-487-189</p>
+            <p><strong>Address:</strong> Plot 123, Example Street, Kampala, Uganda</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
