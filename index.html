@@ -1,43 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - METROVILLE EDGES CO.LTD</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - METROVILLE EDGES CO.LTD</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to METROVILLE EDGES CO.LTD</h1>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="vision.html">Vision</a>
-        <a href="mission.html">Mission</a>
-        <a href="corevalues.html">Core Values</a>
-        <a href="contact.html">Contact</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="Ourteam.html">Our Team</a>
-    </nav>
-    <div class="container">
-        <h2>Your Partner in Results-Based Monitoring & Evaluation</h2>
-        <p>Introducing Metroville Edges Company Ltd: A Trusted Partner in Data-Driven Development for Uganda. 
-
-Welcome to Metroville Edges Company Ltd, where we are dedicated to driving positive change through innovative, data-driven solutions in Monitoring, Evaluation, Accountability, Research, Learning, and Adaptability (MEARLA). Established in 2023, we provide M&E and research services in Uganda, working with a diverse range of clients to achieve sustainable outcomes.
-
-Our core services include expert M&E technical assistance, rigorous research and market analysis, and cutting-edge Management Information Systems (MIS) integrated with Artificial Intelligence. We are committed to empowering organizations with the tools and knowledge they need to make informed decisions and create lasting impact.
-
-At Metroville Edges, we prioritize quality, integrity, simplicity, collaboration, and innovation in everything we do. Our team of skilled professionals is dedicated to delivering results that drive program effectiveness and strategic alignment for our partners.
-
-We have a proven track record of success in working collaboratively with government entities, non-profits, and private organizations to create measurable impact. 
-
-Our vision is to foster positive change through innovative, data-driven M&E solutions, while our mission is to empower organizations with comprehensive M&E and research services that lead to evidence-based decision-making.
-
-If you are looking for a trusted partner in data-driven development, look no further than Metroville Edges Company Ltd. Contact us today to learn more about how we can work together to drive excellence through M&E and research.</p>
+  <header>
+    <div class="header-content">
+      <h1>METROVILLE EDGES CO.LTD</h1>
+      <p>Your Partner in Results-Based Monitoring & Evaluation</p>
+      <button id="themeToggle">Toggle Theme</button>
     </div>
-    <footer>
-        <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
-    </footer>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="vision.html">Vision</a>
+    <a href="mission.html">Mission</a>
+    <a href="corevalues.html">Core Values</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="Ourteam.html">Our Team</a>
+  </nav>
+
+  <section class="hero reveal">
+    <img src="hero.jpg" alt="Teamwork" />
+    <div class="overlay-text">
+      <h2>Innovate. Evaluate. Impact.</h2>
+      <button onclick="location.href='about.html'">Learn More</button>
+    </div>
+  </section>
+
+  <section class="services reveal">
+    <h2>What We Do</h2>
+    <div class="service-boxes">
+      <div class="service">
+        <img src="service1.jpg" alt="Monitoring" />
+        <h3>Monitoring</h3>
+        <p>Tools to track project performance effectively and transparently.</p>
+      </div>
+      <div class="service">
+        <img src="service2.jpg" alt="Evaluation" />
+        <h3>Evaluation</h3>
+        <p>Get detailed, data-driven insights to optimize your impact.</p>
+      </div>
+      <div class="service">
+        <img src="service3.jpg" alt="Capacity Building" />
+        <h3>Training</h3>
+        <p>We build your team's capacity to manage and evaluate projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta reveal">
+    <h2>Let's Build Smarter Solutions Together</h2>
+    <button onclick="location.href='contact.html'">Contact Us</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smart Theme Toggle
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Smart Reveal on Scroll
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      reveals.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          section.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
