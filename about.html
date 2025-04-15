@@ -4,111 +4,152 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - METROVILLE EDGES CO.LTD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #e9f2f7; /* Soft light blue background for the overall page */
+      background-color: #e9f2f7;
       color: #333;
     }
+
     header {
-      background: linear-gradient(90deg, #1d3557, #457b9d); /* Dark blue background for header */
+      background: linear-gradient(90deg, #1d3557, #457b9d);
       color: #fff;
-      padding: 20px;
+      padding: 2rem 1rem;
       text-align: center;
-      font-size: 2em;
-      letter-spacing: 1px;
     }
+
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      background: green; /* Bright blue for navigation bar */
-      padding: 15px;
+      background: green;
+      padding: 1rem;
     }
+
     nav a {
       color: #fff;
-      margin: 0 20px;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
       transition: color 0.3s ease;
     }
+
     nav a:hover {
-      color: #ff6600; /* Orange on hover for interactive effect */
+      color: #ff6600;
     }
+
     .container {
-      width: 85%;
-      margin: auto;
-      overflow: hidden;
-      padding: 20px;
-      background: #fff; /* White background for the main content area */
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
+
     section {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
-    footer {
-      background: #003366; /* Dark blue for footer */
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-    }
+
     h2 {
       color: #003366;
-      margin-bottom: 15px;
-      font-size: 2em;
+      font-size: 2rem;
       text-align: center;
+      margin-bottom: 1rem;
     }
+
     h3 {
       color: #003366;
-      margin-top: 20px;
-      font-size: 1.5em;
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
     }
+
     blockquote {
       font-style: italic;
       color: #666;
-      margin: 15px 0;
+      margin: 20px 0;
       padding-left: 20px;
       border-left: 4px solid #ff6600;
     }
+
     ul {
+      padding-left: 20px;
+      color: #444;
       line-height: 1.8;
-      padding-left: 25px;
-      color: #333;
     }
+
     ul li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
+
     .highlight {
-      background-color: #f0f9ff; /* Light blue background for highlight sections */
-      padding: 20px;
+      background-color: #f0f9ff;
+      padding: 25px;
       border-radius: 10px;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
-      margin: 20px 0;
+      margin-top: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
+
+    .highlight h2,
     .highlight h3 {
       color: #ff6600;
     }
-    .highlight blockquote {
-      border-left: 4px solid #ff6600;
+
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 80px;
     }
-    .highlight ul {
-      color: #666;
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    img.social-icon {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>About Us</h1>
   </header>
 
- <nav>
+  <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
     <a href="vision.html">Vision</a>
     <a href="mission.html">Mission</a>
     <a href="corevalues.html">Core Values</a>
@@ -118,83 +159,67 @@
   </nav>
 
   <div class="container">
-    <!-- Who We Are Section -->
     <section id="who-we-are">
       <h2>Who We Are</h2>
-      <p>METROVILLE EDGES CO.LTD is a limited liability company dedicated to supporting both profit and nonprofit organisations, community-based organisations, public and private organisations in conducting comprehensive Results-Based Monitoring and Evaluation (RBM&E) solutions. We meet the needs of local and international development organisations.</p>
-      <p>Founded in 2023 by six shareholders committed to Uganda’s development, we integrate JPS Consulting Africa, which has been in existence since June 2014. Our extensive capacity enables us to support key drivers of development in the country.</p>
+      <p><strong>METROVILLE EDGES CO.LTD</strong> is a dynamic limited liability company supporting both profit and nonprofit organizations in delivering high-impact Results-Based Monitoring & Evaluation (RBM&E). Since our founding in 2023 by six development-focused shareholders, we’ve been committed to enhancing Uganda’s development landscape — building on the strong legacy of JPS Consulting Africa, active since 2014.</p>
     </section>
 
-    <!-- Innovation Section -->
     <section id="innovation" class="highlight">
       <h2>🌟 Innovation</h2>
-      <p>At <strong>METROVILLE EDGES CO.LTD</strong>, innovation is the engine that drives smarter solutions and long-term sustainability. We continuously reimagine Monitoring & Evaluation (M&E) through creative thinking, digital tools, and adaptive strategies tailored to each organization’s unique context.</p>
+      <p>Innovation fuels our commitment to smarter, scalable M&E. Through creative thinking and adaptive tools, we help organizations not just track progress, but drive it.</p>
       <blockquote>"Innovation means doing better — not just differently."</blockquote>
-      <h3>✨ Our Innovation Approaches Include:</h3>
+      <h3>✨ Key Innovation Strategies:</h3>
       <ul>
-        <li><strong>Digital Data Collection:</strong> Mobile tools, surveys, and GPS-enabled apps for fast, real-time data gathering.</li>
-        <li><strong>Interactive Dashboards:</strong> Live visualizations for real-time tracking and decision-making.</li>
-        <li><strong>Customized M&E Frameworks:</strong> Tailored tools and templates for your project goals and local context.</li>
-        <li><strong>Agile Learning Systems:</strong> Adapting quickly to evolving needs and environments.</li>
-        <li><strong>Predictive & Scenario Analysis:</strong> Leveraging data to forecast trends and risks before they occur.</li>
-      </ul>
-      <h3>🚀 Why Innovation Matters:</h3>
-      <ul>
-        <li>It increases efficiency, reduces redundancy, and maximizes outcomes.</li>
-        <li>It helps organizations stay ahead of the curve in a rapidly changing world.</li>
-        <li>It transforms monitoring from a reporting task to a learning opportunity.</li>
-        <li>It empowers teams to think creatively and act confidently.</li>
+        <li>Mobile & GPS-enabled digital data collection</li>
+        <li>Real-time, interactive dashboards</li>
+        <li>Custom M&E tools and frameworks</li>
+        <li>Agile learning systems for fast adaptation</li>
+        <li>Predictive analytics and scenario planning</li>
       </ul>
     </section>
 
-    <!-- Evaluation Section -->
     <section id="evaluate" class="highlight">
       <h2>📊 Evaluation</h2>
-      <p>Evaluation is the compass that keeps organizations aligned with their goals. We go beyond data collection — we help you make sense of it all. Using qualitative and quantitative methods, our experts assess project performance, identify areas for improvement, and uncover insights that matter. Whether you're running a grassroots initiative or an international development program, our evaluations are thorough, impartial, and focused on outcomes that lead to lasting value.</p>
+      <p>We turn data into insight. Our evaluations go deep — combining qualitative and quantitative methods to guide smarter decision-making and amplify effectiveness.</p>
       <blockquote>"Informed decisions start with informed evaluations."</blockquote>
-      <h3>✅ What We Offer:</h3>
+      <h3>✅ Services Offered:</h3>
       <ul>
-        <li><strong>Baseline, Midterm & Endline Evaluations:</strong> Establish benchmarks, track progress, and assess final outcomes with precision.</li>
-        <li><strong>Formative & Summative Evaluations:</strong> Gain real-time feedback for program improvement or measure overall effectiveness.</li>
-        <li><strong>Developmental Evaluation:</strong> Adaptively evaluate complex programs as they evolve.</li>
-        <li><strong>Mixed-Methods Approaches:</strong> Combining qualitative insights and quantitative data for well-rounded analysis.</li>
-        <li><strong>Participatory Evaluation Models:</strong> Engaging stakeholders to ensure meaningful, inclusive insights.</li>
-        <li><strong>Evaluation Frameworks & Tools:</strong> Custom KPIs, logic models, and indicators that align with your vision and goals.</li>
+        <li>Baseline, midterm & endline evaluations</li>
+        <li>Formative, summative, and developmental assessments</li>
+        <li>Mixed-methods and participatory evaluations</li>
+        <li>Logic models, KPIs, and tailored frameworks</li>
       </ul>
     </section>
 
-    <!-- Impact Section -->
     <section id="impact" class="highlight">
       <h2>🌍 Impact</h2>
-      <p>At <strong>METROVILLE EDGES CO.LTD</strong>, impact isn’t just a buzzword — it’s the purpose behind everything we do. We help organizations define, track, and amplify their impact, from local projects to international initiatives. Our impact-focused approach ensures that every project not only meets targets but leaves a lasting, positive change.</p>
+      <p>Impact is our north star. We support organizations in capturing, communicating, and growing their impact — from grassroots to global scale.</p>
       <blockquote>"When innovation and evaluation work together, impact becomes inevitable."</blockquote>
-      <h3>Our Impact Services Include:</h3>
+      <h3>🔍 How We Support Impact:</h3>
       <ul>
-        <li><strong>Impact Pathway Design:</strong> Mapping short-term outputs to long-term social, economic, and environmental change.</li>
-        <li><strong>Outcome & Impact Evaluation:</strong> Rigorous tools to evaluate what works and what doesn't.</li>
-        <li><strong>Data-Driven Storytelling:</strong> Turning metrics into compelling narratives that engage stakeholders and attract funding.</li>
-        <li><strong>Capacity Strengthening:</strong> Empowering your team to own and lead impact tracking and reporting.</li>
+        <li>Mapping impact pathways from output to outcomes</li>
+        <li>Outcome and impact-level evaluation</li>
+        <li>Data storytelling that inspires stakeholders</li>
+        <li>Strengthening your team's impact tracking capacity</li>
       </ul>
     </section>
-
   </div>
 
   <footer>
-
-  <p>
-    <a href="https://www.linkedin.com/company/metroville-edge" target="_blank" style="color: #fff; text-decoration: none;">
-      <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" style="vertical-align: middle; margin-right: 8px;">
-      Connect with us on LinkedIn
-    </a>
-  </p>
-
-  <p>
-    📞 <a href="tel:+256772487189" style="color: #fff; text-decoration: none;">+256 700 123 456</a><br>
-    📧 <a href="mailto:bmusana0@gmail.com" style="color: #fff; text-decoration: none;">bmusana0@gmail.com</a><br>
-    💬 <a href="https://wa.me/256772487189" target="_blank" style="color: #fff; text-decoration: none;">Chat with us on WhatsApp</a>
-  </p> 
+    <p>
+      <a href="https://www.linkedin.com/company/metroville-edge" target="_blank">
+        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn">
+        Connect with us on LinkedIn
+      </a>
+    </p>
+    <p>
+      📞 <a href="tel:+256772487189">+256 700 123 456</a><br>
+      📧 <a href="mailto:bmusana0@gmail.com">bmusana0@gmail.com</a><br>
+      💬 <a href="https://wa.me/256772487189" target="_blank">Chat with us on WhatsApp</a>
+    </p>
     <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
-</footer>
+  </footer>
+
 </body>
 </html>
 
