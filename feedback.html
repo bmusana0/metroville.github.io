@@ -114,7 +114,7 @@
 
   <div class="container">
     <h2>We Value Your Feedback</h2>
-    <form action="submit_feedback.php" method="POST">
+    <form action="https://formspree.io/f/myzevabo" method="POST">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Your name..." required />
 
@@ -123,6 +123,9 @@
 
       <label for="message">Your Feedback</label>
       <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <input type="hidden" name="_redirect" value="thankyou.html" />
+      <input type="hidden" name="_subject" value="New Feedback Submission" />
 
       <button type="submit">Submit Feedback</button>
     </form>
@@ -143,7 +146,7 @@
     <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
   </footer>
 
-  <!-- Optional: Add smooth scroll reveal -->
+  <!-- Optional: Scroll reveal animation -->
   <!--
   <script src="https://unpkg.com/scrollreveal"></script>
   <script>
@@ -157,3 +160,4 @@
   -->
 </body>
 </html>
+
