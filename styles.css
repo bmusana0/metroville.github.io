@@ -5,25 +5,28 @@ body {
   padding: 0;
   background: #fefefe;
   color: #222;
-  line-height: 1.6; /* Improves readability */
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
 }
 
 /* Header */
 header {
   background: linear-gradient(90deg, #1d3557, #457b9d);
   color: #fff;
-  padding: 3rem 2rem; /* Increased padding for better spacing */
+  padding: 3rem 2rem;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
 }
 
-header h1 {
-  margin-bottom: 0.5rem;
-  font-size: 3rem; /* Slightly larger for better prominence */
-}
-
-header p {
-  font-size: 1.4rem; /* Increased size for better readability */
+header.dark-mode {
+  background: linear-gradient(90deg, #0b2a4a, #34556d);
 }
 
 /* Navigation */
@@ -33,11 +36,16 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+nav.dark-mode {
+  background-color: #1f756b;
 }
 
 nav a {
   color: white;
-  padding: 1rem 1.5rem; /* Adjusted padding for better alignment */
+  padding: 1rem 1.5rem;
   text-decoration: none;
   transition: background-color 0.3s;
   font-weight: bold;
@@ -60,11 +68,11 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.7);
-  transition: filter 0.3s ease; /* Smooth brightness change */
+  transition: filter 0.3s ease;
 }
 
 .hero img:hover {
-  filter: brightness(0.8); /* Brightens the image on hover */
+  filter: brightness(0.8);
 }
 
 .overlay-text {
@@ -92,7 +100,7 @@ nav a:hover {
 
 .overlay-text h2 {
   margin-bottom: 1rem;
-  font-size: 2rem; /* Adjusted for better balance */
+  font-size: 2rem;
 }
 
 /* Button Styling */
@@ -105,7 +113,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s;
-  font-size: 1rem; /* Set a consistent font size */
+  font-size: 1rem;
 }
 
 button:hover {
@@ -117,12 +125,22 @@ button:hover {
   padding: 3rem 2rem;
   background-color: #fff;
   text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .services {
+  background-color: #1e1e1e;
+  color: #eee;
 }
 
 .services h2 {
   color: #264653;
-  font-size: 2.5rem; /* Slightly larger to match the style */
+  font-size: 2.5rem;
   margin-bottom: 2rem;
+}
+
+body.dark-mode .services h2 {
+  color: #8ecae6;
 }
 
 .service-boxes {
@@ -139,8 +157,13 @@ button:hover {
   border-radius: 10px;
   padding: 1.5rem;
   max-width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box; /* Ensures padding does not overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s, border 0.3s;
+  box-sizing: border-box;
+}
+
+body.dark-mode .service {
+  background-color: #2b2b2b;
+  border-color: #00b4d8;
 }
 
 .service:hover {
@@ -157,7 +180,11 @@ button:hover {
 .service h3 {
   color: #1d3557;
   margin-bottom: 0.5rem;
-  font-size: 1.6rem; /* Added a bit of size for prominence */
+  font-size: 1.6rem;
+}
+
+body.dark-mode .service h3 {
+  color: #a8dadc;
 }
 
 /* Call To Action Section */
@@ -166,10 +193,16 @@ button:hover {
   color: #1d3557;
   text-align: center;
   padding: 2.5rem 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .cta {
+  background: linear-gradient(90deg, #7f1d1d, #1a1a1a);
+  color: #f1faee;
 }
 
 .cta h2 {
-  font-size: 2.5rem; /* Adjusted size */
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -179,7 +212,12 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1.5rem;
-  font-size: 1rem; /* Slightly increased for readability */
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+footer.dark-mode {
+  background-color: #1a1a1a;
 }
 
 footer a {
@@ -192,28 +230,40 @@ footer a:hover {
   color: #e76f51;
 }
 
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   header h1 {
-    font-size: 2.2rem; /* Responsive text size */
+    font-size: 2.2rem;
   }
 
   .service {
-    max-width: 250px; /* Makes services section more compact on mobile */
+    max-width: 250px;
   }
 
   .hero {
-    height: 300px; /* Adjusted height for smaller screens */
+    height: 300px;
   }
 
   .overlay-text {
     left: 5%;
     bottom: 10%;
-    max-width: 90%; /* Ensures text is not cut off */
-    padding: 1rem; /* Reduced padding */
+    max-width: 90%;
+    padding: 1rem;
   }
 
   .cta h2 {
-    font-size: 2rem; /* Adjusted for mobile */
+    font-size: 2rem;
   }
 }
