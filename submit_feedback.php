@@ -1,41 +1,32 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize input data
+    // Get and sanitize form inputs
     $name = htmlspecialchars(trim($_POST["name"]));
     $email = htmlspecialchars(trim($_POST["email"]));
-    $feedback = htmlspecialchars(trim($_POST["feedback"]));
+    $message = htmlspecialchars(trim($_POST["message"]));
 
-    // Optionally save to a text file
-    $entry = "Name: $name\nEmail: $email\nFeedback: $feedback\n---\n";
-    file_put_contents("feedbacks.txt", $entry, FILE_APPEND);
+    // Email details
+    $to = "bmusana0@gmail.com";
+    $subject = "New Feedback from $name";
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    // Response message
-    echo "<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Feedback Received</title>
-        <link rel='stylesheet' href='styles.css'>
-    </head>
-    <body>
-        <header>
-            <h1>Thank You!</h1>
-        </header>
-        <div class='container'>
-            <p>Hi <strong>$name</strong>, your feedback has been received.</p>
-            <p><strong>Your Email:</strong> $email</p>
-            <p><strong>Message:</strong><br>$feedback</p>
-            <p><a href='feedback.html'>Go back</a></p>
-        </div>
-        <footer>
-            <p>&copy; 2025 METROVILLE EDGES CO.LTD. All rights reserved.</p>
-        </footer>
-    </body>
-    </html>";
+    $body = "You received new feedback:\n\n";
+    $body .= "Name: $name\n";
+    $body .= "Email: $email\n";
+    $body .= "Message:\n$message\n";
+
+    // Send email
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<h2>Thank you, $name! Your feedback has been sent successfully.</h2>";
+    } else {
+        echo "<h2>Sorry, there was a problem sending your feedback. Please try again later.</h2>";
+    }
 } else {
-    // If accessed without POST
+    // Not a POST request
     header("Location: feedback.html");
     exit();
 }
 ?>
+
