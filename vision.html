@@ -6,15 +6,30 @@
   <title>Our Vision - METROVILLE EDGES CO.LTD</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --primary: #004999;
+      --accent: #00baff;
+      --bg-light: #f8faff;
+      --bg-dark: #121212;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #f8faff;
-      color: #333;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
     }
 
     header {
-      background-color: #004999;
+      background-color: var(--primary);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
@@ -31,22 +46,48 @@
       margin: 0 12px;
       text-decoration: none;
       font-weight: 500;
+      transition: color 0.2s ease-in-out;
     }
 
     nav a:hover,
     nav a.active {
       text-decoration: underline;
-      color: #00baff;
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 500;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
     .container {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
+      animation: fadeIn 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h2 {
-      color: #004999;
+      color: var(--primary);
       font-weight: 600;
     }
 
@@ -65,6 +106,8 @@
 </head>
 <body>
 
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
   <header>
     <h1>Our Vision</h1>
   </header>
@@ -81,13 +124,22 @@
 
   <div class="container">
     <h2>A Vision for Sustainable Development</h2>
-    <p>At <strong>METROVILLE EDGES CO.LTD</strong>, our vision is to become a leader in delivering high-quality, Results-Based Monitoring and Evaluation services. We aim to empower our clients to make data-driven decisions that drive progress toward achieving sustainable development goals — positively impacting communities for generations to come.</p>
+    <p>
+      At <strong>METROVILLE EDGES CO.LTD</strong>, we envision becoming a beacon of excellence in Results-Based Monitoring and Evaluation. Our mission is to empower organizations through strategic data insights, enabling them to make meaningful decisions that shape communities and drive sustainable development.
+    </p>
   </div>
 
   <footer>
     <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
   </footer>
 
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
 </body>
 </html>
+
 
