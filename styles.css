@@ -1,171 +1,219 @@
-:root {
-  --primary: #1d3557;
-  --accent: #f4a261;
-  --bg-light: #f9f9f9;
-  --bg-dark: #1a1a1a;
-  --text-light: #fff;
-  --text-dark: #222;
-}
-
-/* Reset & Base */
+/* Base styles */
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  transition: all 0.4s ease;
+  padding: 0;
+  background: #fefefe;
+  color: #222;
+  line-height: 1.6; /* Improves readability */
 }
 
-.dark-mode {
-  background: var(--bg-dark);
-  color: var(--text-light);
-}
-
+/* Header */
 header {
-  background: linear-gradient(120deg, var(--primary), #457b9d);
-  color: white;
-  padding: 3rem 1rem;
-  text-align: center;
-  position: relative;
-}
-
-.header-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#themeToggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #f4a261;
+  background: linear-gradient(90deg, #1d3557, #457b9d);
   color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
+  padding: 3rem 2rem; /* Increased padding for better spacing */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Nav */
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 3rem; /* Slightly larger for better prominence */
+}
+
+header p {
+  font-size: 1.4rem; /* Increased size for better readability */
+}
+
+/* Navigation */
 nav {
+  background-color: #2a9d8f;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
   color: white;
+  padding: 1rem 1.5rem; /* Adjusted padding for better alignment */
   text-decoration: none;
-  padding: 1rem;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
+  font-weight: bold;
 }
 
 nav a:hover {
-  background: #457b9d;
+  background-color: #21867a;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   position: relative;
   height: 400px;
+  background-color: #e76f51;
+  overflow: hidden;
 }
 
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.6);
+  filter: brightness(0.7);
+  transition: filter 0.3s ease; /* Smooth brightness change */
+}
+
+.hero img:hover {
+  filter: brightness(0.8); /* Brightens the image on hover */
 }
 
 .overlay-text {
   position: absolute;
-  top: 50%;
+  bottom: 20%;
   left: 10%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
   color: #fff;
-  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
   border-radius: 10px;
   max-width: 400px;
+  animation: fadeInUp 1s ease-out;
 }
 
-/* Button Style */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay-text h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem; /* Adjusted for better balance */
+}
+
+/* Button Styling */
 button {
-  background: var(--accent);
-  color: white;
+  background-color: #f4a261;
+  color: #fff;
+  padding: 0.8rem 1.4rem;
   border: none;
-  padding: 0.8rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
+  font-size: 1rem; /* Set a consistent font size */
 }
 
 button:hover {
-  background: #e76f51;
+  background-color: #e76f51;
 }
 
-/* Services */
+/* Services Section */
 .services {
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
+  background-color: #fff;
   text-align: center;
+}
+
+.services h2 {
+  color: #264653;
+  font-size: 2.5rem; /* Slightly larger to match the style */
+  margin-bottom: 2rem;
 }
 
 .service-boxes {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .service {
-  background: #ffffff;
-  border: 1px solid #eee;
-  padding: 1.5rem;
+  background-color: #f0f8ff;
+  border: 2px solid #90e0ef;
   border-radius: 10px;
-  width: 280px;
-  transition: transform 0.3s;
+  padding: 1.5rem;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Ensures padding does not overflow */
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .service img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-.service:hover {
-  transform: scale(1.05);
+.service h3 {
+  color: #1d3557;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem; /* Added a bit of size for prominence */
 }
 
-/* Call to Action */
+/* Call To Action Section */
 .cta {
-  background: #2a9d8f;
-  color: white;
+  background: linear-gradient(90deg, #e63946, #f1faee);
+  color: #1d3557;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 2.5rem 1rem;
+}
+
+.cta h2 {
+  font-size: 2.5rem; /* Adjusted size */
+  margin-bottom: 1.5rem;
 }
 
 /* Footer */
 footer {
-  background: #264653;
-  color: white;
+  background-color: #264653;
+  color: #fff;
   text-align: center;
   padding: 1.5rem;
+  font-size: 1rem; /* Slightly increased for readability */
 }
 
-/* Reveal Animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
+footer a {
+  color: #f4a261;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+footer a:hover {
+  color: #e76f51;
 }
 
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem; /* Responsive text size */
+  }
+
+  .service {
+    max-width: 250px; /* Makes services section more compact on mobile */
+  }
+
+  .hero {
+    height: 300px; /* Adjusted height for smaller screens */
+  }
+
+  .overlay-text {
+    left: 5%;
+    bottom: 10%;
+    max-width: 90%; /* Ensures text is not cut off */
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .cta h2 {
+    font-size: 2rem; /* Adjusted for mobile */
+  }
+}
