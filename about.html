@@ -7,21 +7,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* ===== COLOR MANAGEMENT SYSTEM ===== */
     :root {
-      --primary: #2563eb;
-      --primary-light: #3b82f6;
-      --primary-dark: #1d4ed8;
-      --secondary: #1e293b;
-      --accent: #f59e0b;
-      --accent-light: #fbbf24;
+      /* Brand Colors - Change these to update entire color scheme */
+      --brand-primary: #2563eb;
+      --brand-primary-light: #3b82f6;
+      --brand-primary-dark: #1d4ed8;
+      --brand-secondary: #1e293b;
+      --brand-accent: #f59e0b;
+      --brand-accent-light: #fbbf24;
+      
+      /* Neutral Colors */
       --white: #ffffff;
       --light: #f8fafc;
       --text: #212529;
       --text-light: #6c757d;
       --border: #e9ecef;
+      
+      /* Component Colors - Auto-generated from brand colors */
+      --header-bg: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 100%);
+      --nav-bg: var(--brand-secondary);
+      --footer-bg: var(--brand-secondary);
+      --active-bg: var(--brand-primary);
+      --hover-color: var(--brand-accent-light);
+      --accent-border: var(--brand-primary);
+      
+      /* Effects */
       --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       --transition: all 0.3s ease;
     }
+
+    /* Alternative Color Schemes - Uncomment to use */
+    
+    /* Professional Blue Theme */
+    /*
+    :root {
+      --brand-primary: #1e40af;
+      --brand-primary-light: #3b82f6;
+      --brand-primary-dark: #1e3a8a;
+      --brand-secondary: #1f2937;
+      --brand-accent: #059669;
+      --brand-accent-light: #10b981;
+    }
+    */
+    
+    /* Corporate Green Theme */
+    /*
+    :root {
+      --brand-primary: #059669;
+      --brand-primary-light: #10b981;
+      --brand-primary-dark: #047857;
+      --brand-secondary: #1f2937;
+      --brand-accent: #dc2626;
+      --brand-accent-light: #ef4444;
+    }
+    */
+    
+    /* Modern Purple Theme */
+    /*
+    :root {
+      --brand-primary: #7c3aed;
+      --brand-primary-light: #8b5cf6;
+      --brand-primary-dark: #6d28d9;
+      --brand-secondary: #1f2937;
+      --brand-accent: #ec4899;
+      --brand-accent-light: #f472b6;
+    }
+    */
 
     * {
       box-sizing: border-box;
@@ -36,10 +88,10 @@
       line-height: 1.6;
     }
 
-    /* COLORED HEADER */
+    /* HEADER - Uses brand colors */
     header {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: white;
+      background: var(--header-bg);
+      color: var(--white);
       padding: 1.5rem 1rem 2rem;
       text-align: center;
       position: relative;
@@ -132,15 +184,15 @@
       opacity: 0.9;
     }
 
-    /* COLORED NAVIGATION */
+    /* NAVIGATION - Uses brand colors */
     nav {
-      background: var(--secondary);
+      background: var(--nav-bg);
       padding: 0;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: var(--shadow);
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 2px solid var(--accent-border);
     }
 
     .nav-container {
@@ -174,13 +226,13 @@
     }
 
     .nav-brand .logo span {
-      color: var(--accent-light);
+      color: var(--brand-accent-light);
       font-weight: 700;
     }
 
     .nav-brand .logo i {
       font-size: 1.5rem;
-      color: var(--accent-light);
+      color: var(--brand-accent-light);
     }
 
     .nav-links {
@@ -209,11 +261,11 @@
 
     .nav-links a:hover {
       background: rgba(255, 255, 255, 0.08);
-      color: var(--accent-light);
+      color: var(--hover-color);
     }
 
     .nav-links a.active {
-      background: var(--primary);
+      background: var(--active-bg);
       color: var(--white);
     }
 
@@ -237,7 +289,7 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
-    /* MONOCHROME CONTENT SECTIONS */
+    /* CONTENT SECTIONS - Monochrome for readability */
     .container {
       width: 90%;
       max-width: 1100px;
@@ -430,9 +482,9 @@
       color: var(--text);
     }
 
-    /* COLORED FOOTER */
+    /* FOOTER - Uses brand colors */
     footer {
-      background: var(--secondary);
+      background: var(--footer-bg);
       color: var(--white);
       padding: 2.5rem 1rem 1.5rem;
       margin-top: 3rem;
@@ -461,7 +513,7 @@
       left: 0;
       width: 35px;
       height: 2px;
-      background: var(--accent-light);
+      background: var(--brand-accent-light);
     }
 
     .footer-links {
@@ -483,7 +535,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--accent-light);
+      color: var(--hover-color);
       padding-left: 5px;
     }
 
@@ -512,7 +564,7 @@
     }
 
     .social-icons a:hover {
-      background: var(--primary-light);
+      background: var(--brand-primary-light);
       transform: translateY(-2px);
     }
 
@@ -525,7 +577,7 @@
       color: #94a3b8;
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE DESIGN */
     @media (max-width: 1024px) {
       .nav-links a {
         padding: 0.9rem 1rem;
@@ -552,11 +604,11 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--secondary);
+        background: var(--nav-bg);
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        border-top: 3px solid var(--primary);
+        border-top: 3px solid var(--accent-border);
       }
 
       .nav-links.active {
@@ -661,7 +713,9 @@
         <div class="logo-img">
           <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
         </div>
-        
+        <div id="logo-placeholder" style="display:none; width:80px; height:80px; background:var(--white); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--brand-primary); font-weight:bold; font-size:1rem; margin-right:1.25rem;">
+          ME
+        </div>
         <div class="logo-text">
           <h1>METROVILLE EDGES</h1>
           <p>CO.LTD | Monitoring & Evaluation Experts</p>
@@ -899,4 +953,3 @@
 
 </body>
 </html>
-
