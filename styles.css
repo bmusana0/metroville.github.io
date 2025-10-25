@@ -19,7 +19,7 @@ body.dark-mode {
 header {
   background: linear-gradient(90deg, #1d3557, #457b9d);
   color: #fff;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background 0.3s, color 0.3s;
@@ -27,6 +27,57 @@ header {
 
 header.dark-mode {
   background: linear-gradient(90deg, #0b2a4a, #34556d);
+}
+
+/* =========================
+   FIXED HEADER STRUCTURE
+   ========================= */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: #fff;
+  padding: 4px;
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.header-text p {
+  font-size: 1rem;
+  margin: 0;
+  color: #d1e8ff;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .header-text h1 {
+    font-size: 1.6rem;
+  }
 }
 
 /* Navigation */
