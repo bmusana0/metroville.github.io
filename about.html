@@ -4,48 +4,249 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - METROVILLE EDGES CO.LTD</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #004999;
+      --secondary: #222;
+      --light: #f9f9f9;
+      --white: #ffffff;
+      --text: #333;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: #e9f2f7;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #004999;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 3rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1.5rem 2.5rem;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-img {
+      width: 100px;
+      height: 100px;
+      margin-right: 1.5rem;
+      border-radius: 12px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      padding: 5px;
+    }
+
+    .logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      text-align: left;
+    }
+
+    .logo-text h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .logo-text p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    header h1 {
+      position: relative;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      position: relative;
+      font-size: 1.1rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* UPDATED NAVIGATION STYLES */
     nav {
-      background-color: #222;
-      text-align: center;
-      padding: 1rem 0;
+      background: linear-gradient(135deg, var(--secondary) 0%, #333 100%);
+      padding: 0;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      border-bottom: 3px solid var(--primary);
     }
 
-   nav a {
-      color: white;
-      margin: 0 12px;
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .nav-brand .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .nav-brand .logo:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-brand .logo span {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .nav-brand .logo i {
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--white);
       text-decoration: none;
       font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 8px 8px 0 0;
+      font-size: 0.95rem;
     }
 
-    nav a:hover,
-    nav a.active {
-      text-decoration: underline;
-      color: #00baff;
+    .nav-links a i {
+      font-size: 1.1rem;
+      transition: var(--transition);
     }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--primary);
+    }
+
+    .nav-links a:hover i {
+      transform: scale(1.1);
+    }
+
+    .nav-links a.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 -4px 12px rgba(0, 102, 204, 0.3);
+    }
+
+    .nav-links a.active::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--white);
+    }
+
+    .nav-links a.active i {
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.1);
     }
 
     .container {
@@ -53,92 +254,331 @@
       max-width: 1200px;
       margin: 40px auto;
       background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     }
 
     section {
       margin-bottom: 60px;
+      padding: 30px;
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       color: #003366;
-      font-size: 2rem;
+      font-size: 2.2rem;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
     }
 
     h3 {
       color: #003366;
-      margin-top: 1.5rem;
-      font-size: 1.3rem;
+      margin-top: 1.8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #444;
     }
 
     blockquote {
       font-style: italic;
-      color: #666;
-      margin: 20px 0;
-      padding-left: 20px;
-      border-left: 4px solid #ff6600;
+      color: #555;
+      margin: 25px 0;
+      padding: 25px;
+      border-left: 5px solid var(--primary);
+      background: #f8fafc;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 25px;
       color: #444;
       line-height: 1.8;
     }
 
     ul li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      font-size: 1.3rem;
     }
 
     .highlight {
-      background-color: #f0f9ff;
-      padding: 25px;
-      border-radius: 10px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
+      padding: 35px;
+      border-radius: 12px;
       margin-top: 30px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid var(--primary);
     }
 
     .highlight h2,
     .highlight h3 {
-      color: #ff6600;
+      color: var(--primary);
+    }
+
+    .icon-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .icon-header i {
+      font-size: 2.5rem;
+      color: var(--primary);
     }
 
     footer {
-      background: #003366;
+      background: linear-gradient(135deg, var(--secondary) 0%, #444 100%);
       color: #fff;
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 3rem 1rem 1.5rem;
       margin-top: 80px;
     }
 
-    footer p {
-      margin: 0.5rem 0;
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
     }
 
-    footer a {
-      color: #fff;
+    .footer-section h3 {
+      color: var(--white);
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #ddd;
       text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
     }
 
-    img.social-icon {
-      vertical-align: middle;
-      margin-right: 8px;
+    .footer-links i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links a {
+        padding: 1rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      .nav-links a i {
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 768px) {
-      nav {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, var(--secondary) 0%, #333 100%);
         flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        border-top: 3px solid var(--primary);
       }
 
-      nav a {
-        margin: 10px 0;
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        justify-content: flex-start;
+      }
+
+      .nav-links a.active::before {
+        display: none;
+      }
+
+      .nav-links a.active {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .logo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .logo-img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      .logo-text {
+        text-align: center;
+      }
+
+      .nav-brand .logo {
+        font-size: 1.4rem;
+      }
+
+      .container {
+        padding: 25px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .logo-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .nav-brand .logo {
+        font-size: 1.2rem;
+      }
+
+      .nav-brand .logo i {
+        font-size: 1.4rem;
+      }
+
+      .container {
+        padding: 20px;
+        width: 95%;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      .highlight {
+        padding: 25px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -146,28 +586,89 @@
 <body>
 
   <header>
+    <div class="logo-section">
+      <div class="logo-container">
+        <div class="logo-img">
+          <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
+        </div>
+        <div id="logo-placeholder" style="display:none; width:100px; height:100px; background:#0066cc; border-radius:12px; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.2rem; margin-right:1.5rem;">
+          ME
+        </div>
+        <div class="logo-text">
+          <h1>METROVILLE EDGES</h1>
+          <p>CO.LTD | Monitoring & Evaluation Experts</p>
+        </div>
+      </div>
+    </div>
     <h1>About Us</h1>
+    <p>Learn more about our mission, values, and the team behind METROVILLE EDGES</p>
   </header>
 
+  <!-- UPDATED NAVIGATION -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="vision.html">Vision</a>
-    <a href="mission.html">Mission</a>
-    <a href="corevalues.html">Core Values</a>
-    <a href="contact.html">Contact</a>
-    <a href="feedback.html">Feedback</a>
-    <a href="Ourteam.html">Our Team</a>
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="index.html" class="logo">
+          <i class="fas fa-chart-line"></i>
+          METROVILLE <span>EDGES</span>
+        </a>
+      </div>
+      
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="nav-links">
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+        <a href="about.html" class="active">
+          <i class="fas fa-info-circle"></i>
+          About
+        </a>
+        <a href="vision.html">
+          <i class="fas fa-eye"></i>
+          Vision
+        </a>
+        <a href="mission.html">
+          <i class="fas fa-bullseye"></i>
+          Mission
+        </a>
+        <a href="corevalues.html">
+          <i class="fas fa-heart"></i>
+          Core Values
+        </a>
+        <a href="Ourteam.html">
+          <i class="fas fa-users"></i>
+          Our Team
+        </a>
+        <a href="contact.html">
+          <i class="fas fa-envelope"></i>
+          Contact
+        </a>
+        <a href="feedback.html">
+          <i class="fas fa-comment-dots"></i>
+          Feedback
+        </a>
+      </div>
+    </div>
   </nav>
 
   <div class="container">
     <section id="who-we-are">
-      <h2>Who We Are</h2>
-      <p><strong>METROVILLE EDGES CO.LTD</strong> is a dynamic limited liability company supporting both profit and nonprofit organizations in delivering high-impact Results-Based Monitoring & Evaluation (RBM&E). Since our founding in 2023 by six development-focused shareholders, we’ve been committed to enhancing Uganda’s development landscape — building on the strong legacy of JPS Consulting Africa, active since 2014.</p>
+      <div class="icon-header">
+        <i class="fas fa-building"></i>
+        <h2>Who We Are</h2>
+      </div>
+      <p><strong>METROVILLE EDGES CO.LTD</strong> is a dynamic limited liability company supporting both profit and nonprofit organizations in delivering high-impact Results-Based Monitoring & Evaluation (RBM&E). Since our founding in 2023 by six development-focused shareholders, we've been committed to enhancing Uganda's development landscape — building on the strong legacy of JPS Consulting Africa, active since 2014.</p>
     </section>
 
     <section id="innovation" class="highlight">
-      <h2>🌟 Innovation</h2>
+      <div class="icon-header">
+        <i class="fas fa-lightbulb"></i>
+        <h2>🌟 Innovation</h2>
+      </div>
       <p>Innovation fuels our commitment to smarter, scalable M&E. Through creative thinking and adaptive tools, we help organizations not just track progress, but drive it.</p>
       <blockquote>"Innovation means doing better — not just differently."</blockquote>
       <h3>✨ Key Innovation Strategies:</h3>
@@ -181,7 +682,10 @@
     </section>
 
     <section id="evaluate" class="highlight">
-      <h2>📊 Evaluation</h2>
+      <div class="icon-header">
+        <i class="fas fa-chart-bar"></i>
+        <h2>📊 Evaluation</h2>
+      </div>
       <p>We turn data into insight. Our evaluations go deep — combining qualitative and quantitative methods to guide smarter decision-making and amplify effectiveness.</p>
       <blockquote>"Informed decisions start with informed evaluations."</blockquote>
       <h3>✅ Services Offered:</h3>
@@ -194,7 +698,10 @@
     </section>
 
     <section id="impact" class="highlight">
-      <h2>🌍 Impact</h2>
+      <div class="icon-header">
+        <i class="fas fa-globe-africa"></i>
+        <h2>🌍 Impact</h2>
+      </div>
       <p>Impact is our north star. We support organizations in capturing, communicating, and growing their impact — from grassroots to global scale.</p>
       <blockquote>"When innovation and evaluation work together, impact becomes inevitable."</blockquote>
       <h3>🔍 How We Support Impact:</h3>
@@ -208,19 +715,73 @@
   </div>
 
   <footer>
-    <p>
-      <a href="https://www.linkedin.com/company/metroville-edge" target="_blank">
-        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn">
-        Connect with us on LinkedIn
-      </a>
-    </p>
-    <p>
-      📞 <a href="tel:+256772487189">+256 700 123 456</a><br>
-      📧 <a href="mailto:bmusana0@gmail.com">bmusana0@gmail.com</a><br>
-      💬 <a href="https://wa.me/256772487189" target="_blank">Chat with us on WhatsApp</a>
-    </p>
-    <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="tel:+256768145046">
+              <i class="fas fa-phone"></i> +256 768 145 046
+            </a>
+          </li>
+          <li>
+            <a href="mailto:infometrovilleedges@gmail.com">
+              <i class="fas fa-envelope"></i> infometrovilleedges@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/256772487189" target="_blank">
+              <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="Ourteam.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <p>Follow us on social media to stay updated with our latest news and insights.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/metroville-edge" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
