@@ -3,90 +3,448 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - METROVILLE EDGES CO.LTD</title>
+  <title>Our Team - METROVILLE EDGES CO.LTD</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #004d99;
+      --secondary: #222;
+      --light: #f9f9f9;
+      --white: #ffffff;
+      --text: #333;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    header, nav, footer {
-      background-color: #222;
-      color: #fff;
+    header {
+      background: linear-gradient(135deg, var(--secondary) 0%, #444 100%);
+      color: var(--white);
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 1rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    nav a {
-      color: #fff;
-      margin: 0 12px;
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230066cc" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    header h1 {
+      position: relative;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      position: relative;
+      font-size: 1.1rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background-color: var(--secondary);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--white);
       text-decoration: none;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .logo span {
+      color: var(--primary);
     }
 
-    h1, h2 {
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .page-title {
       text-align: center;
-      color: #0066cc;
+      padding: 3rem 1rem 1rem;
+      position: relative;
     }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
+    .page-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .page-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .team-section {
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
     .photo-grid-item {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
     }
 
     .photo-grid-item:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
-    .photo-grid-item img {
+    .member-img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      height: 300px;
+      object-fit: cover;
+      transition: var(--transition);
     }
 
-    .caption {
-      margin-top: 12px;
-      font-weight: 600;
-      color: #333;
+    .photo-grid-item:hover .member-img {
+      transform: scale(1.05);
+    }
+
+    .member-info {
+      padding: 1.5rem;
       text-align: center;
     }
 
-    footer p {
-      margin: 10px 0;
+    .member-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
     }
 
-    footer a {
-      color: #fff;
+    .member-role {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .member-role::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .photo-grid-item:hover .member-role::after {
+      transform: scaleX(1);
+    }
+
+    .member-bio {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--light);
+      color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .team-description {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .team-description h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .team-description p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
       text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+      margin-top: 1rem;
     }
 
-    footer img {
-      vertical-align: middle;
-      margin-right: 6px;
+    .cta-button:hover {
+      background-color: transparent;
+      color: var(--primary);
     }
 
-    @media (max-width: 600px) {
-      nav {
-        font-size: 0.9rem;
+    footer {
+      background: linear-gradient(135deg, var(--secondary) 0%, #444 100%);
+      color: var(--white);
+      padding: 3rem 1rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+
+    .footer-links i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .page-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .page-title h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -94,64 +452,186 @@
 <body>
 
   <header>
-    <h1>Welcome to METROVILLE EDGES CO.LTD</h1>
+    <h1>METROVILLE EDGES CO.LTD</h1>
+    <p>Driving innovation and excellence in every solution we deliver</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="vision.html">Vision</a>
-    <a href="mission.html">Mission</a>
-    <a href="corevalues.html">Core Values</a>
-    <a href="contact.html">Contact</a>
-    <a href="feedback.html">Feedback</a>
-    <a href="Ourteam.html">Our Team</a>
+    <div class="nav-container">
+      <a href="index.html" class="logo">METROVILLE <span>EDGES</span></a>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="vision.html">Vision</a>
+        <a href="mission.html">Mission</a>
+        <a href="corevalues.html">Core Values</a>
+        <a href="Ourteam.html" class="active">Our Team</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+      </div>
+    </div>
   </nav>
 
-  <h2>Meet Our Team</h2>
-
-  <div class="photo-grid">
-    <div class="photo-grid-item">
-      <img src="pic5.jpg" alt="RONALD BIRUNGI">
-      <div class="caption">RONALD BIRUNGI, Founder and Director</div>
-    </div>
-    <div class="photo-grid-item">
-      <img src="pic2.jpg" alt="RITAH TUHAMYE">
-      <div class="caption">RITAH TUHAMYE, Co-Founder</div>
-    </div>
-    <div class="photo-grid-item">
-      <img src="pic3.jpg" alt="DAVID MASAABA">
-      <div class="caption">DAVID MASAABA, Marketing Lead</div>
-    </div>
-    <div class="photo-grid-item">
-      <img src="pic4.jpg" alt="BAYLON MUSANA">
-      <div class="caption">BAYLON MUSANA, Tech Lead</div>
-    </div>
-    <div class="photo-grid-item">
-      <img src="pic1.jpg" alt="NOELYN NABWETEME">
-      <div class="caption">NOELYN NABWETEME, Director</div>
-    </div>
-    <div class="photo-grid-item">
-      <img src="pic61.jpg" alt="HARRON OTIM">
-      <div class="caption">HARRON OTIM, Director</div>
-    </div>
+  <div class="page-title">
+    <h2>Meet Our Team</h2>
+    <p>Our dedicated professionals bring diverse expertise and a shared commitment to excellence</p>
   </div>
 
+  <section class="team-section">
+    <div class="photo-grid">
+      <div class="photo-grid-item">
+        <img src="pic5.jpg" alt="RONALD BIRUNGI" class="member-img">
+        <div class="member-info">
+          <h3 class="member-name">RONALD BIRUNGI</h3>
+          <p class="member-role">DIRECTOR</p>
+          <p class="member-bio">Strategic leader with over 10 years of experience in business development and corporate governance.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="photo-grid-item">
+        <img src="pic21.jpg" alt="RITAH TUHAMYE" class="member-img">
+        <div class="member-info">
+          <h3 class="member-name">RITAH TUHAMYE</h3>
+          <p class="member-role">COMMUNICATIONS LEAD</p>
+          <p class="member-bio">Expert in crafting compelling narratives and building strong stakeholder relationships.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="photo-grid-item">
+        <img src="pic3.jpg" alt="DAVID MASAABA" class="member-img">
+        <div class="member-info">
+          <h3 class="member-name">DAVID MASAABA</h3>
+          <p class="member-role">MARKETING LEAD</p>
+          <p class="member-bio">Creative marketer with a track record of developing successful brand strategies.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="photo-grid-item">
+        <img src="pic4.jpg" alt="BAYLON MUSANA" class="member-img">
+        <div class="member-info">
+          <h3 class="member-name">BAYLON MUSANA</h3>
+          <p class="member-role">TECH & INNOVATIONS LEAD</p>
+          <p class="member-bio">Technology visionary driving digital transformation and innovative solutions.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="photo-grid-item">
+        <img src="pic1.jpg" alt="NOELYN NABWETEME" class="member-img">
+        <div class="member-info">
+          <h3 class="member-name">NOELYN NABWETEME</h3>
+          <p class="member-role">DIRECTOR</p>
+          <p class="member-bio">Strategic planner with expertise in operational excellence and financial management.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="photo-grid-item">
+        <img src="pic61.jpg" alt="HARRON OTIM" class="member-img">
+        <div class="member-info">
+          <h3 class="member-name">HARRON OTIM</h3>
+          <p class="member-role">OPERATIONS LEAD</p>
+          <p class="member-bio">Efficiency expert focused on optimizing processes and delivering exceptional results.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-description">
+    <h3>Our Collaborative Approach</h3>
+    <p>At METROVILLE EDGES, our strength lies in our diverse team of professionals who bring together a wealth of experience from various industries. We believe in collaborative problem-solving and leveraging each team member's unique strengths to deliver exceptional value to our clients.</p>
+    <p>Our culture fosters innovation, continuous learning, and a shared commitment to excellence in everything we do.</p>
+    <a href="contact.html" class="cta-button">Get In Touch With Us</a>
+  </section>
+
   <footer>
-    <p>
-      <a href="https://www.linkedin.com/company/metroville-edge" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn">
-        Connect with us on LinkedIn
-      </a>
-    </p>
-    <p>
-      📞 <a href="tel:+256772487189">+256 772 487 189</a><br>
-      📧 <a href="mailto:bmusana0@gmail.com">bmusana0@gmail.com</a><br>
-      💬 <a href="https://wa.me/256772487189" target="_blank">Chat with us on WhatsApp</a>
-    </p>
-    <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="tel:+256768145046">
+              <i class="fas fa-phone"></i> +256 768 145 046
+            </a>
+          </li>
+          <li>
+            <a href="mailto:infometrovilleedges@gmail.com">
+              <i class="fas fa-envelope"></i> infometrovilleedges@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/256772487189" target="_blank">
+              <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="Ourteam.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <p>Follow us on social media to stay updated with our latest news and insights.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/metroville-edge" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 METROVILLE EDGES CO.LTD. All Rights Reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
-
