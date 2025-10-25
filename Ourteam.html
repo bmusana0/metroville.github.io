@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Team - METROVILLE EDGES CO.LTD</title>
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -192,15 +191,31 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
-    .member-img {
+    .member-img-container {
       width: 100%;
       height: 300px;
+      overflow: hidden;
+      position: relative;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .member-img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       transition: var(--transition);
     }
 
     .photo-grid-item:hover .member-img {
       transform: scale(1.05);
+    }
+
+    .placeholder-icon {
+      font-size: 4rem;
+      color: #ccc;
     }
 
     .member-info {
@@ -483,7 +498,12 @@
   <section class="team-section">
     <div class="photo-grid">
       <div class="photo-grid-item">
-        <img src="pic5.jpg" alt="RONALD BIRUNGI" class="member-img">
+        <div class="member-img-container">
+          <img src="pic5.jpg" alt="RONALD BIRUNGI" class="member-img" onerror="this.style.display='none'; document.getElementById('placeholder5').style.display='block'">
+          <div id="placeholder5" class="placeholder-icon" style="display:none">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
         <div class="member-info">
           <h3 class="member-name">RONALD BIRUNGI</h3>
           <p class="member-role">DIRECTOR</p>
@@ -495,7 +515,12 @@
         </div>
       </div>
       <div class="photo-grid-item">
-        <img src="pic21.jpg" alt="RITAH TUHAMYE" class="member-img">
+        <div class="member-img-container">
+          <img src="pic21.jpg" alt="RITAH TUHAMYE" class="member-img" onerror="this.style.display='none'; document.getElementById('placeholder21').style.display='block'">
+          <div id="placeholder21" class="placeholder-icon" style="display:none">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
         <div class="member-info">
           <h3 class="member-name">RITAH TUHAMYE</h3>
           <p class="member-role">COMMUNICATIONS LEAD</p>
@@ -507,7 +532,12 @@
         </div>
       </div>
       <div class="photo-grid-item">
-        <img src="pic3.jpg" alt="DAVID MASAABA" class="member-img">
+        <div class="member-img-container">
+          <img src="pic3.jpg" alt="DAVID MASAABA" class="member-img" onerror="this.style.display='none'; document.getElementById('placeholder3').style.display='block'">
+          <div id="placeholder3" class="placeholder-icon" style="display:none">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
         <div class="member-info">
           <h3 class="member-name">DAVID MASAABA</h3>
           <p class="member-role">MARKETING LEAD</p>
@@ -519,7 +549,12 @@
         </div>
       </div>
       <div class="photo-grid-item">
-        <img src="pic4.jpg" alt="BAYLON MUSANA" class="member-img">
+        <div class="member-img-container">
+          <img src="pic4.jpg" alt="BAYLON MUSANA" class="member-img" onerror="this.style.display='none'; document.getElementById('placeholder4').style.display='block'">
+          <div id="placeholder4" class="placeholder-icon" style="display:none">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
         <div class="member-info">
           <h3 class="member-name">BAYLON MUSANA</h3>
           <p class="member-role">TECH & INNOVATIONS LEAD</p>
@@ -531,7 +566,12 @@
         </div>
       </div>
       <div class="photo-grid-item">
-        <img src="pic1.jpg" alt="NOELYN NABWETEME" class="member-img">
+        <div class="member-img-container">
+          <img src="pic1.jpg" alt="NOELYN NABWETEME" class="member-img" onerror="this.style.display='none'; document.getElementById('placeholder1').style.display='block'">
+          <div id="placeholder1" class="placeholder-icon" style="display:none">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
         <div class="member-info">
           <h3 class="member-name">NOELYN NABWETEME</h3>
           <p class="member-role">DIRECTOR</p>
@@ -543,7 +583,12 @@
         </div>
       </div>
       <div class="photo-grid-item">
-        <img src="pic61.jpg" alt="HARRON OTIM" class="member-img">
+        <div class="member-img-container">
+          <img src="pic61.jpg" alt="HARRON OTIM" class="member-img" onerror="this.style.display='none'; document.getElementById('placeholder61').style.display='block'">
+          <div id="placeholder61" class="placeholder-icon" style="display:none">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
         <div class="member-info">
           <h3 class="member-name">HARRON OTIM</h3>
           <p class="member-role">OPERATIONS LEAD</p>
@@ -629,6 +674,18 @@
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+
+    // Image error handling - fallback to placeholder
+    document.querySelectorAll('.member-img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.style.display = 'none';
+        const placeholderId = 'placeholder' + this.src.split('/').pop().split('.')[0].replace('pic', '');
+        const placeholder = document.getElementById(placeholderId);
+        if (placeholder) {
+          placeholder.style.display = 'block';
+        }
       });
     });
   </script>
