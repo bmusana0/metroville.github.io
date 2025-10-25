@@ -37,44 +37,6 @@
       --transition: all 0.3s ease;
     }
 
-    /* Alternative Color Schemes - Uncomment to use */
-    
-    /* Professional Blue Theme */
-    /*
-    :root {
-      --brand-primary: #1e40af;
-      --brand-primary-light: #3b82f6;
-      --brand-primary-dark: #1e3a8a;
-      --brand-secondary: #1f2937;
-      --brand-accent: #059669;
-      --brand-accent-light: #10b981;
-    }
-    */
-    
-    /* Corporate Green Theme */
-    /*
-    :root {
-      --brand-primary: #059669;
-      --brand-primary-light: #10b981;
-      --brand-primary-dark: #047857;
-      --brand-secondary: #1f2937;
-      --brand-accent: #dc2626;
-      --brand-accent-light: #ef4444;
-    }
-    */
-    
-    /* Modern Purple Theme */
-    /*
-    :root {
-      --brand-primary: #7c3aed;
-      --brand-primary-light: #8b5cf6;
-      --brand-primary-dark: #6d28d9;
-      --brand-secondary: #1f2937;
-      --brand-accent: #ec4899;
-      --brand-accent-light: #f472b6;
-    }
-    */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -159,12 +121,14 @@
       margin-bottom: 0.2rem;
       line-height: 1.2;
       text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      color: var(--white);
     }
 
     .logo-text p {
       font-size: 0.85rem;
       opacity: 0.9;
       font-weight: 300;
+      color: var(--white);
     }
 
     header h1 {
@@ -173,6 +137,7 @@
       font-weight: 700;
       margin-bottom: 0.5rem;
       text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      color: var(--white);
     }
 
     header p {
@@ -182,6 +147,7 @@
       max-width: 500px;
       margin: 0 auto;
       opacity: 0.9;
+      color: var(--white);
     }
 
     /* NAVIGATION - Uses brand colors */
@@ -368,6 +334,7 @@
     .image-placeholder i {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: var(--text-light);
     }
 
     h2 {
@@ -711,10 +678,7 @@
     <div class="logo-section">
       <div class="logo-container">
         <div class="logo-img">
-          <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
-        </div>
-        <div id="logo-placeholder" style="display:none; width:80px; height:80px; background:var(--white); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--brand-primary); font-weight:bold; font-size:1rem; margin-right:1.25rem;">
-          ME
+          <img src="logo.jpg" alt="METROVILLE EDGES Logo">
         </div>
         <div class="logo-text">
           <h1>METROVILLE EDGES</h1>
