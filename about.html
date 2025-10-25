@@ -8,18 +8,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-light: #3b82f6;
-      --primary-dark: #1d4ed8;
-      --secondary: #1e293b;
-      --accent: #f59e0b;
-      --accent-light: #fbbf24;
-      --light: #f8fafc;
       --white: #ffffff;
-      --text: #334155;
-      --text-light: #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --light: #f8f9fa;
+      --border: #e9ecef;
+      --text: #212529;
+      --text-light: #6c757d;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       --transition: all 0.3s ease;
     }
 
@@ -37,24 +31,12 @@
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: white;
-      padding: 1.5rem 1rem 2.5rem;
+      background: var(--white);
+      color: var(--text);
+      padding: 1.5rem 1rem 2rem;
       text-align: center;
       position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-      background-size: cover;
-      background-position: center;
+      border-bottom: 1px solid var(--border);
     }
 
     .logo-section {
@@ -69,18 +51,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.15);
       padding: 1rem 2rem;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .logo-img {
       width: 80px;
       height: 80px;
       margin-right: 1.25rem;
-      border-radius: 10px;
+      border-radius: 8px;
       background: var(--white);
       display: flex;
       align-items: center;
@@ -88,6 +66,7 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       padding: 4px;
+      border: 1px solid var(--border);
     }
 
     .logo-img img {
@@ -109,7 +88,7 @@
 
     .logo-text p {
       font-size: 0.85rem;
-      opacity: 0.9;
+      color: var(--text-light);
       font-weight: 300;
     }
 
@@ -126,18 +105,18 @@
       font-weight: 300;
       max-width: 500px;
       margin: 0 auto;
-      opacity: 0.9;
+      color: var(--text-light);
     }
 
     /* NAVIGATION */
     nav {
-      background: var(--secondary);
+      background: var(--white);
       padding: 0;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: var(--shadow);
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-container {
@@ -158,7 +137,7 @@
     .nav-brand .logo {
       font-weight: 700;
       font-size: 1.4rem;
-      color: var(--white);
+      color: var(--text);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -171,13 +150,11 @@
     }
 
     .nav-brand .logo span {
-      color: var(--accent-light);
       font-weight: 700;
     }
 
     .nav-brand .logo i {
       font-size: 1.5rem;
-      color: var(--accent-light);
     }
 
     .nav-links {
@@ -187,7 +164,7 @@
     }
 
     .nav-links a {
-      color: var(--white);
+      color: var(--text);
       text-decoration: none;
       font-weight: 500;
       transition: var(--transition);
@@ -205,24 +182,19 @@
     }
 
     .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--accent-light);
+      background: var(--light);
     }
 
     .nav-links a.active {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .nav-links a.active i {
-      color: var(--white);
+      background: var(--light);
+      font-weight: 600;
     }
 
     .mobile-menu-btn {
       display: none;
       background: none;
       border: none;
-      color: var(--white);
+      color: var(--text);
       font-size: 1.3rem;
       cursor: pointer;
       padding: 0.5rem;
@@ -231,7 +203,7 @@
     }
 
     .mobile-menu-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--light);
     }
 
     /* CONTENT */
@@ -241,14 +213,14 @@
       margin: 2rem auto;
       background: var(--white);
       padding: 2.5rem;
-      border-radius: 16px;
+      border-radius: 8px;
       box-shadow: var(--shadow);
     }
 
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: 8px;
       transition: var(--transition);
       background: var(--white);
       border: 1px solid var(--border);
@@ -257,8 +229,8 @@
     }
 
     section:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .section-content {
@@ -274,14 +246,15 @@
     }
 
     .section-image {
-      border-radius: 10px;
+      border-radius: 6px;
       overflow: hidden;
       box-shadow: var(--shadow);
-      height: 280px;
+      height: 250px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f8fafc;
+      background: var(--light);
+      border: 1px solid var(--border);
     }
 
     .section-image img {
@@ -292,7 +265,7 @@
     }
 
     .section-image:hover img {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
 
     .image-placeholder {
@@ -302,7 +275,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      background: var(--light);
       color: var(--text-light);
       font-size: 0.9rem;
       text-align: center;
@@ -310,15 +283,14 @@
     }
 
     .image-placeholder i {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: var(--primary-light);
     }
 
     h2 {
-      color: var(--secondary);
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+      color: var(--text);
+      font-size: 1.7rem;
+      margin-bottom: 1.25rem;
       font-weight: 600;
       position: relative;
       padding-bottom: 0.75rem;
@@ -330,19 +302,19 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 2px;
+      width: 50px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 1px;
     }
 
     h3 {
-      color: var(--primary-dark);
-      margin: 1.5rem 0 1rem 0;
-      font-size: 1.3rem;
+      color: var(--text);
+      margin: 1.25rem 0 0.75rem 0;
+      font-size: 1.2rem;
       font-weight: 600;
       padding-left: 0.75rem;
-      border-left: 3px solid var(--accent);
+      border-left: 2px solid var(--text-light);
     }
 
     /* PARAGRAPHS */
@@ -354,36 +326,34 @@
     }
 
     p strong {
-      color: var(--primary-dark);
       font-weight: 600;
     }
 
     .intro-paragraph {
       font-size: 1.1rem;
-      color: var(--secondary);
-      background: #f1f5f9;
-      padding: 1.5rem;
-      border-radius: 8px;
-      border-left: 4px solid var(--primary);
-      margin-bottom: 1.5rem;
+      background: var(--light);
+      padding: 1.25rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--text-light);
+      margin-bottom: 1.25rem;
     }
 
     .featured-paragraph {
-      background: #eff6ff;
+      background: var(--light);
       padding: 1.25rem 1.5rem;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      border: 1px solid #dbeafe;
+      border-radius: 6px;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
     }
 
     blockquote {
       font-style: italic;
       color: var(--text-light);
-      margin: 1.5rem 0;
-      padding: 1.5rem;
-      border-left: 4px solid var(--accent);
-      background: #fffbeb;
-      border-radius: 8px;
+      margin: 1.25rem 0;
+      padding: 1.25rem;
+      border-left: 3px solid var(--text-light);
+      background: var(--light);
+      border-radius: 6px;
       font-size: 1.05rem;
     }
 
@@ -401,8 +371,7 @@
     }
 
     ul li::before {
-      content: "▸";
-      color: var(--accent);
+      content: "•";
       font-weight: bold;
       display: inline-block;
       width: 1em;
@@ -410,32 +379,32 @@
     }
 
     .highlight {
-      background: #f0fdf4;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-      border: 1px solid #bbf7d0;
+      background: var(--light);
+      padding: 1.75rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      border: 1px solid var(--border);
     }
 
     .icon-header {
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       grid-column: 1 / -1;
     }
 
     .icon-header i {
-      font-size: 2rem;
-      color: var(--primary);
+      font-size: 1.8rem;
     }
 
     /* FOOTER */
     footer {
-      background: var(--secondary);
-      color: var(--white);
-      padding: 3rem 1rem 1.5rem;
-      margin-top: 4rem;
+      background: var(--white);
+      color: var(--text);
+      padding: 2.5rem 1rem 1.5rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
     }
 
     .footer-content {
@@ -447,7 +416,7 @@
     }
 
     .footer-section h3 {
-      color: var(--white);
+      color: var(--text);
       font-size: 1.2rem;
       margin-bottom: 1.25rem;
       position: relative;
@@ -460,9 +429,9 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 40px;
+      width: 35px;
       height: 2px;
-      background: var(--accent-light);
+      background: var(--text);
     }
 
     .footer-links {
@@ -475,7 +444,7 @@
     }
 
     .footer-links a {
-      color: #cbd5e0;
+      color: var(--text-light);
       text-decoration: none;
       transition: var(--transition);
       display: flex;
@@ -484,7 +453,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--accent-light);
+      color: var(--text);
       padding-left: 5px;
     }
 
@@ -507,23 +476,24 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--white);
+      background: var(--light);
+      color: var(--text);
       transition: var(--transition);
+      border: 1px solid var(--border);
     }
 
     .social-icons a:hover {
-      background: var(--primary-light);
-      transform: translateY(-2px);
+      background: var(--border);
+      transform: translateY(-1px);
     }
 
     .copyright {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid var(--border);
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: var(--text-light);
     }
 
     /* RESPONSIVE */
@@ -541,7 +511,7 @@
       }
       
       .section-image {
-        height: 250px;
+        height: 220px;
         order: -1;
       }
     }
@@ -553,10 +523,11 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--secondary);
+        background: var(--white);
         flex-direction: column;
         padding: 1rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--border);
       }
 
       .nav-links.active {
@@ -575,7 +546,7 @@
       }
 
       header {
-        padding: 1.25rem 1rem 2rem;
+        padding: 1.25rem 1rem 1.75rem;
       }
 
       header h1 {
@@ -585,7 +556,7 @@
       .logo-container {
         flex-direction: column;
         text-align: center;
-        padding: 1.25rem;
+        padding: 1rem;
       }
 
       .logo-img {
@@ -608,7 +579,7 @@
       }
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
     }
 
@@ -634,7 +605,7 @@
       }
 
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
       }
 
       .icon-header {
@@ -644,11 +615,11 @@
       }
 
       .icon-header i {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
       }
       
       .section-image {
-        height: 200px;
+        height: 180px;
       }
     }
   </style>
@@ -661,7 +632,7 @@
         <div class="logo-img">
           <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
         </div>
-        <div id="logo-placeholder" style="display:none; width:80px; height:80px; background:var(--primary); border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1rem; margin-right:1.25rem;">
+        <div id="logo-placeholder" style="display:none; width:80px; height:80px; background:var(--light); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--text); font-weight:bold; font-size:1rem; margin-right:1.25rem; border:1px solid var(--border);">
           ME
         </div>
         <div class="logo-text">
