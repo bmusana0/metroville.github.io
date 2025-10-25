@@ -7,36 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ===== COLOR MANAGEMENT SYSTEM ===== */
-    :root {
-      /* Brand Colors - Change these to update entire color scheme */
-      --brand-primary: #2563eb;
-      --brand-primary-light: #3b82f6;
-      --brand-primary-dark: #1d4ed8;
-      --brand-secondary: #1e293b;
-      --brand-accent: #f59e0b;
-      --brand-accent-light: #fbbf24;
-      
-      /* Neutral Colors */
-      --white: #ffffff;
-      --light: #f8fafc;
-      --text: #212529;
-      --text-light: #6c757d;
-      --border: #e9ecef;
-      
-      /* Component Colors - Auto-generated from brand colors */
-      --header-bg: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 100%);
-      --nav-bg: var(--brand-secondary);
-      --footer-bg: var(--brand-secondary);
-      --active-bg: var(--brand-primary);
-      --hover-color: var(--brand-accent-light);
-      --accent-border: var(--brand-primary);
-      
-      /* Effects */
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      --transition: all 0.3s ease;
-    }
-
+    /* ===== RESET AND BASE STYLES ===== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -45,12 +16,45 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--light);
-      color: var(--text);
       line-height: 1.6;
     }
 
-    /* HEADER - Uses brand colors */
+    /* ===== COLOR SYSTEM - CHANGE THESE 6 VARIABLES ===== */
+    :root {
+      /* BRAND COLORS - UPDATE THESE */
+      --brand-primary: #dc2626;        /* Red */
+      --brand-primary-light: #ef4444;  /* Light Red */
+      --brand-primary-dark: #b91c1c;   /* Dark Red */
+      --brand-secondary: #1e293b;      /* Dark Gray */
+      --brand-accent: #f59e0b;         /* Amber */
+      --brand-accent-light: #fbbf24;   /* Light Amber */
+
+      /* DERIVED COLORS - Auto-generated */
+      --header-bg: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary) 100%);
+      --nav-bg: var(--brand-secondary);
+      --footer-bg: var(--brand-secondary);
+      --active-bg: var(--brand-primary);
+      --hover-color: var(--brand-accent-light);
+      
+      /* NEUTRAL COLORS */
+      --white: #ffffff;
+      --light: #f8fafc;
+      --text: #212529;
+      --text-light: #6c757d;
+      --border: #e9ecef;
+      
+      /* EFFECTS */
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    /* Apply background and text colors */
+    body {
+      background: var(--light);
+      color: var(--text);
+    }
+
+    /* ===== HEADER STYLES ===== */
     header {
       background: var(--header-bg);
       color: var(--white);
@@ -120,7 +124,6 @@
       font-weight: 700;
       margin-bottom: 0.2rem;
       line-height: 1.2;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
       color: var(--white);
     }
 
@@ -136,7 +139,6 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
       color: var(--white);
     }
 
@@ -150,7 +152,7 @@
       color: var(--white);
     }
 
-    /* NAVIGATION - Uses brand colors */
+    /* ===== NAVIGATION STYLES ===== */
     nav {
       background: var(--nav-bg);
       padding: 0;
@@ -158,7 +160,7 @@
       top: 0;
       z-index: 1000;
       box-shadow: var(--shadow);
-      border-bottom: 2px solid var(--accent-border);
+      border-bottom: 2px solid var(--brand-primary);
     }
 
     .nav-container {
@@ -255,7 +257,7 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
-    /* CONTENT SECTIONS - Monochrome for readability */
+    /* ===== CONTENT SECTIONS ===== */
     .container {
       width: 90%;
       max-width: 1100px;
@@ -273,8 +275,6 @@
       transition: var(--transition);
       background: var(--white);
       border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
     }
 
     section:hover {
@@ -449,7 +449,7 @@
       color: var(--text);
     }
 
-    /* FOOTER - Uses brand colors */
+    /* ===== FOOTER STYLES ===== */
     footer {
       background: var(--footer-bg);
       color: var(--white);
@@ -544,7 +544,7 @@
       color: #94a3b8;
     }
 
-    /* RESPONSIVE DESIGN */
+    /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 1024px) {
       .nav-links a {
         padding: 0.9rem 1rem;
@@ -575,7 +575,7 @@
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        border-top: 3px solid var(--accent-border);
+        border-top: 3px solid var(--brand-primary);
       }
 
       .nav-links.active {
