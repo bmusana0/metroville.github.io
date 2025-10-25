@@ -89,7 +89,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 10px;
+      padding: 5px;
     }
 
     .logo-text {
@@ -562,13 +562,11 @@
     <div class="logo-section">
       <div class="logo-container">
         <div class="logo-img">
-          <!-- Replace with your actual logo image -->
-          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="60" height="60" rx="8" fill="#0066cc"/>
-            <path d="M15 20L30 10L45 20V40L30 50L15 40V20Z" fill="white"/>
-            <circle cx="30" cy="30" r="8" fill="#0066cc"/>
-            <path d="M26 28L28 30L34 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <!-- ACTUAL COMPANY LOGO -->
+          <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
+          <div id="logo-placeholder" style="display:none; width:100%; height:100%; background:#0066cc; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.2rem;">
+            ME
+          </div>
         </div>
         <div class="logo-text">
           <h1>METROVILLE EDGES</h1>
