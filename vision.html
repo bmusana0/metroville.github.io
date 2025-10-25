@@ -52,6 +52,48 @@
       background-position: center;
     }
 
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-icon {
+      font-size: 2.5rem;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .logo-text {
+      text-align: left;
+    }
+
+    .logo-text h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+    }
+
+    .logo-text p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
     header h1 {
       position: relative;
       font-size: 2.5rem;
@@ -456,6 +498,21 @@
       .tab-content {
         padding: 2rem 1.5rem;
       }
+
+      .logo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .logo-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      .logo-text {
+        text-align: center;
+      }
     }
 
     @media (max-width: 480px) {
@@ -476,12 +533,27 @@
         width: 100%;
         max-width: 280px;
       }
+
+      .logo-text h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <div class="logo-section">
+      <div class="logo-container">
+        <div class="logo-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="logo-text">
+          <h1>METROVILLE EDGES</h1>
+          <p>CO.LTD | Monitoring & Evaluation Experts</p>
+        </div>
+      </div>
+    </div>
     <h1>Our Mission, Vision & Values</h1>
     <p>Guiding principles that drive our commitment to excellence and impact</p>
   </header>
@@ -496,6 +568,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="vision.html">Vision</a>
+        <a href="mission.html" class="active">Mission & Values</a>
         <a href="Ourteam.html">Our Team</a>
         <a href="contact.html">Contact</a>
         <a href="feedback.html">Feedback</a>
@@ -685,4 +758,3 @@
 
 </body>
 </html>
-
