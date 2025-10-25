@@ -72,9 +72,10 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
+    /* SOLUTION 1: Simple fixed size with padding */
     .logo-img {
-      width: 90px;
-      height: 90px;
+      width: 100px;
+      height: 100px;
       margin-right: 1.5rem;
       border-radius: 12px;
       background: var(--white);
@@ -83,36 +84,45 @@
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       overflow: hidden;
-      padding: 8px;
+      padding: 5px;
     }
 
-    /* OPTION 1: Contain (keeps aspect ratio, fits within container) */
-    .logo-img.contain img {
+    .logo-img img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
 
-    /* OPTION 2: Cover (fills container, may crop edges) */
-    .logo-img.cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* SOLUTION 2: Auto-sizing based on image */
+    .logo-img-auto {
+      margin-right: 1.5rem;
+      border-radius: 12px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      padding: 10px;
+      max-width: 120px;
+      max-height: 120px;
     }
 
-    /* OPTION 3: Scale down (prevents enlargement, fits within container) */
-    .logo-img.scale-down img {
-      width: 100%;
-      height: 100%;
-      object-fit: scale-down;
-    }
-
-    /* OPTION 4: Custom fit (adjusts based on image dimensions) */
-    .logo-img.custom img {
+    .logo-img-auto img {
       max-width: 100%;
       max-height: 100%;
       width: auto;
       height: auto;
+    }
+
+    /* SOLUTION 3: Background image approach */
+    .logo-img-bg {
+      width: 100px;
+      height: 100px;
+      margin-right: 1.5rem;
+      border-radius: 12px;
+      background: var(--white) center/contain no-repeat;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .logo-text {
@@ -544,11 +554,9 @@
         padding: 1.5rem;
       }
 
-      .logo-img {
+      .logo-img, .logo-img-auto, .logo-img-bg {
         margin-right: 0;
         margin-bottom: 1rem;
-        width: 80px;
-        height: 80px;
       }
 
       .logo-text {
@@ -586,13 +594,27 @@
   <header>
     <div class="logo-section">
       <div class="logo-container">
-        <div class="logo-img contain"> <!-- Change class to: contain, cover, scale-down, or custom -->
-          <!-- ACTUAL COMPANY LOGO -->
+        <!-- SOLUTION 1: Fixed size with object-fit: contain -->
+        <div class="logo-img">
           <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
-          <div id="logo-placeholder" style="display:none; width:100%; height:100%; background:#0066cc; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.2rem;">
-            ME
-          </div>
         </div>
+        
+        <!-- SOLUTION 2: Auto-sizing (uncomment to try) -->
+        <!--
+        <div class="logo-img-auto">
+          <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
+        </div>
+        -->
+        
+        <!-- SOLUTION 3: Background image (uncomment to try) -->
+        <!--
+        <div class="logo-img-bg" style="background-image: url('logo.jpg')"></div>
+        -->
+        
+        <div id="logo-placeholder" style="display:none; width:100px; height:100px; background:#0066cc; border-radius:12px; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:1.2rem; margin-right:1.5rem;">
+          ME
+        </div>
+        
         <div class="logo-text">
           <h1>METROVILLE EDGES</h1>
           <p>CO.LTD | Monitoring & Evaluation Experts</p>
@@ -603,6 +625,7 @@
     <p>Guiding principles that drive our commitment to excellence and impact</p>
   </header>
 
+  <!-- Rest of the content remains the same -->
   <nav>
     <div class="nav-container">
       <a href="index.html" class="logo">METROVILLE <span>EDGES</span></a>
