@@ -31,6 +31,23 @@
       line-height: 1.6;
     }
 
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--primary);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 10000;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
     header {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: var(--white);
@@ -793,20 +810,23 @@
 </head>
 <body>
 
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Color Customization Panel -->
   <div class="color-customizer">
-    <div class="color-toggle">
+    <div class="color-toggle" aria-label="Toggle color customizer">
       <i class="fas fa-palette"></i>
     </div>
     <h3><i class="fas fa-paint-brush"></i> Color Theme</h3>
     
     <div class="color-options">
-      <div class="color-option red active" data-color="#e74c3c"></div>
-      <div class="color-option blue" data-color="#3498db"></div>
-      <div class="color-option green" data-color="#2ecc71"></div>
-      <div class="color-option purple" data-color="#9b59b6"></div>
-      <div class="color-option orange" data-color="#e67e22"></div>
-      <div class="color-option teal" data-color="#1abc9c"></div>
+      <div class="color-option red active" data-color="#e74c3c" aria-label="Red theme"></div>
+      <div class="color-option blue" data-color="#3498db" aria-label="Blue theme"></div>
+      <div class="color-option green" data-color="#2ecc71" aria-label="Green theme"></div>
+      <div class="color-option purple" data-color="#9b59b6" aria-label="Purple theme"></div>
+      <div class="color-option orange" data-color="#e67e22" aria-label="Orange theme"></div>
+      <div class="color-option teal" data-color="#1abc9c" aria-label="Teal theme"></div>
     </div>
     
     <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Select a color to change the website theme</p>
@@ -816,7 +836,7 @@
     <div class="logo-section">
       <div class="logo-container">
         <div class="logo-img">
-          <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'">
+          <img src="logo.jpg" alt="METROVILLE EDGES CO.LTD Logo" onerror="this.style.display='none'">
         </div>
         
         <div class="logo-text">
@@ -839,7 +859,7 @@
         </a>
       </div>
       
-      <button class="mobile-menu-btn">
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
         <i class="fas fa-bars"></i>
       </button>
       
@@ -853,15 +873,13 @@
           About
         </a>
         <a href="Ourteam.html">
-          <i class="fas fa-eye"></i>
-          Ourteam
+          <i class="fas fa-users"></i>
+          Our Team
         </a>
-        <a href="vision.html">
+        <a href="vision.html" class="active" aria-current="page">
           <i class="fas fa-eye"></i>
-          Vision
+          Mission & Vision
         </a>
-       
-        
         <a href="contact.html">
           <i class="fas fa-envelope"></i>
           Contact
@@ -874,99 +892,101 @@
     </div>
   </nav>
 
-  <section class="page-intro">
-    <h2>Our Guiding Principles</h2>
-    <p>At METROVILLE EDGES CO.LTD, our mission, vision, and core values form the foundation of everything we do. They guide our decisions, shape our culture, and drive our commitment to delivering exceptional value to our clients and communities.</p>
-  </section>
+  <main id="main-content">
+    <section class="page-intro">
+      <h2>Our Guiding Principles</h2>
+      <p>At METROVILLE EDGES CO.LTD, our mission, vision, and core values form the foundation of everything we do. They guide our decisions, shape our culture, and drive our commitment to delivering exceptional value to our clients and communities.</p>
+    </section>
 
-  <section class="tabs-container">
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="mission">
-        <i class="fas fa-bullseye"></i>
-        Our Mission
-      </button>
-      <button class="tab-btn" data-tab="vision">
-        <i class="fas fa-eye"></i>
-        Our Vision
-      </button>
-      <button class="tab-btn" data-tab="values">
-        <i class="fas fa-heart"></i>
-        Our Values
-      </button>
-    </div>
-
-    <div class="tab-content active" id="mission">
-      <div class="content-header">
-        <div class="content-icon">
+    <section class="tabs-container">
+      <div class="tabs" role="tablist" aria-label="Mission, Vision and Values">
+        <button class="tab-btn active" data-tab="mission" role="tab" aria-selected="true" aria-controls="mission-tab">
           <i class="fas fa-bullseye"></i>
-        </div>
-        <div>
-          <h2 class="content-title">Our Mission</h2>
-          <p class="content-subtitle">Our purpose and commitment</p>
-        </div>
-      </div>
-      <div class="content-body">
-        <p>At <strong>METROVILLE EDGES CO.LTD</strong>, our mission is to enhance the service delivery of development projects, programs, and organizations by institutionalizing effective monitoring and evaluation systems.</p>
-        <p>These systems are designed to align with both donor reporting requirements and internal management objectives — ensuring accountability, insight, and lasting impact.</p>
-        <p>We believe that robust M&E systems are essential for organizations to track progress, measure outcomes, and continuously improve their interventions for maximum social impact.</p>
-      </div>
-    </div>
-
-    <div class="tab-content" id="vision">
-      <div class="content-header">
-        <div class="content-icon">
+          Our Mission
+        </button>
+        <button class="tab-btn" data-tab="vision" role="tab" aria-selected="false" aria-controls="vision-tab">
           <i class="fas fa-eye"></i>
-        </div>
-        <div>
-          <h2 class="content-title">Our Vision</h2>
-          <p class="content-subtitle">Where we're headed</p>
-        </div>
-      </div>
-      <div class="content-body">
-        <p>At <strong>METROVILLE EDGES CO.LTD</strong>, our vision is to become a leader in delivering high-quality, Results-Based Monitoring and Evaluation services.</p>
-        <p>We aim to empower our clients to make data-driven decisions that drive progress toward achieving sustainable development goals — positively impacting communities for generations to come.</p>
-        <p>We envision a future where every development initiative is guided by evidence, where resources are allocated efficiently, and where every intervention creates meaningful, measurable change in people's lives.</p>
-      </div>
-    </div>
-
-    <div class="tab-content" id="values">
-      <div class="content-header">
-        <div class="content-icon">
+          Our Vision
+        </button>
+        <button class="tab-btn" data-tab="values" role="tab" aria-selected="false" aria-controls="values-tab">
           <i class="fas fa-heart"></i>
+          Our Values
+        </button>
+      </div>
+
+      <div class="tab-content active" id="mission" role="tabpanel" aria-labelledby="mission-tab" tabindex="0">
+        <div class="content-header">
+          <div class="content-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div>
+            <h2 class="content-title">Our Mission</h2>
+            <p class="content-subtitle">Our purpose and commitment</p>
+          </div>
         </div>
-        <div>
-          <h2 class="content-title">Our Core Values</h2>
-          <p class="content-subtitle">What we stand for</p>
+        <div class="content-body">
+          <p>At <strong>METROVILLE EDGES CO.LTD</strong>, our mission is to enhance the service delivery of development projects, programs, and organizations by institutionalizing effective monitoring and evaluation systems.</p>
+          <p>These systems are designed to align with both donor reporting requirements and internal management objectives — ensuring accountability, insight, and lasting impact.</p>
+          <p>We believe that robust M&E systems are essential for organizations to track progress, measure outcomes, and continuously improve their interventions for maximum social impact.</p>
         </div>
       </div>
-      <div class="content-body">
-        <p>Our values are the foundation of our company culture and guide our interactions with clients, partners, and each other.</p>
-        
-        <ul class="values-list">
-          <li>
-            <div class="value-title">Quality</div>
-            <div class="value-desc">We provide top-tier services that meet our clients' needs and exceed their expectations through meticulous attention to detail and continuous improvement.</div>
-          </li>
-          <li>
-            <div class="value-title">Integrity</div>
-            <div class="value-desc">We uphold the highest standards of honesty and transparency in all our dealings, building trust through ethical practices and reliable data.</div>
-          </li>
-          <li>
-            <div class="value-title">Simplicity</div>
-            <div class="value-desc">We make complex processes simple and easy to understand, ensuring that our clients can effectively use M&E insights for decision-making.</div>
-          </li>
-          <li>
-            <div class="value-title">Sharing</div>
-            <div class="value-desc">We believe in the power of collaboration and knowledge sharing, working as partners with our clients to achieve shared goals.</div>
-          </li>
-          <li>
-            <div class="value-title">Innovation</div>
-            <div class="value-desc">We are always looking for new ways to improve and adapt, leveraging technology and creative approaches to enhance M&E practices.</div>
-          </li>
-        </ul>
+
+      <div class="tab-content" id="vision" role="tabpanel" aria-labelledby="vision-tab" tabindex="0" hidden>
+        <div class="content-header">
+          <div class="content-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <div>
+            <h2 class="content-title">Our Vision</h2>
+            <p class="content-subtitle">Where we're headed</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <p>At <strong>METROVILLE EDGES CO.LTD</strong>, our vision is to become a leader in delivering high-quality, Results-Based Monitoring and Evaluation services.</p>
+          <p>We aim to empower our clients to make data-driven decisions that drive progress toward achieving sustainable development goals — positively impacting communities for generations to come.</p>
+          <p>We envision a future where every development initiative is guided by evidence, where resources are allocated efficiently, and where every intervention creates meaningful, measurable change in people's lives.</p>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div class="tab-content" id="values" role="tabpanel" aria-labelledby="values-tab" tabindex="0" hidden>
+        <div class="content-header">
+          <div class="content-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div>
+            <h2 class="content-title">Our Core Values</h2>
+            <p class="content-subtitle">What we stand for</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <p>Our values are the foundation of our company culture and guide our interactions with clients, partners, and each other.</p>
+          
+          <ul class="values-list">
+            <li>
+              <div class="value-title">Quality</div>
+              <div class="value-desc">We provide top-tier services that meet our clients' needs and exceed their expectations through meticulous attention to detail and continuous improvement.</div>
+            </li>
+            <li>
+              <div class="value-title">Integrity</div>
+              <div class="value-desc">We uphold the highest standards of honesty and transparency in all our dealings, building trust through ethical practices and reliable data.</div>
+            </li>
+            <li>
+              <div class="value-title">Simplicity</div>
+              <div class="value-desc">We make complex processes simple and easy to understand, ensuring that our clients can effectively use M&E insights for decision-making.</div>
+            </li>
+            <li>
+              <div class="value-title">Sharing</div>
+              <div class="value-desc">We believe in the power of collaboration and knowledge sharing, working as partners with our clients to achieve shared goals.</div>
+            </li>
+            <li>
+              <div class="value-title">Innovation</div>
+              <div class="value-desc">We are always looking for new ways to improve and adapt, leveraging technology and creative approaches to enhance M&E practices.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <section class="cta-section">
     <div class="cta-content">
@@ -1007,6 +1027,7 @@
           <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
           <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
           <li><a href="Ourteam.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+          <li><a href="vision.html"><i class="fas fa-chevron-right"></i> Mission & Vision</a></li>
           <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
@@ -1014,16 +1035,16 @@
         <h3>Connect With Us</h3>
         <p>Follow us on social media to stay updated with our latest news and insights.</p>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/company/metroville-edge" target="_blank">
+          <a href="https://www.linkedin.com/company/metroville-edge" target="_blank" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="#" target="_blank" aria-label="Twitter">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="#" target="_blank" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="#" target="_blank" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
@@ -1047,21 +1068,48 @@
       });
     });
 
-    // Tab functionality
+    // Tab functionality with accessibility improvements
     document.querySelectorAll('.tab-btn').forEach(button => {
       button.addEventListener('click', () => {
         // Remove active class from all buttons and content
         document.querySelectorAll('.tab-btn').forEach(btn => {
           btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
         });
         document.querySelectorAll('.tab-content').forEach(content => {
           content.classList.remove('active');
+          content.setAttribute('hidden', 'true');
         });
         
         // Add active class to clicked button and corresponding content
         button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
         const tabId = button.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
+        const tabContent = document.getElementById(tabId);
+        tabContent.classList.add('active');
+        tabContent.removeAttribute('hidden');
+        tabContent.focus();
+      });
+    });
+
+    // Keyboard navigation for tabs
+    document.querySelectorAll('.tab-btn').forEach((button, index, buttons) => {
+      button.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+          const nextIndex = (index + 1) % buttons.length;
+          buttons[nextIndex].focus();
+          buttons[nextIndex].click();
+        } else if (e.key === 'ArrowLeft') {
+          const prevIndex = (index - 1 + buttons.length) % buttons.length;
+          buttons[prevIndex].focus();
+          buttons[prevIndex].click();
+        } else if (e.key === 'Home') {
+          buttons[0].focus();
+          buttons[0].click();
+        } else if (e.key === 'End') {
+          buttons[buttons.length - 1].focus();
+          buttons[buttons.length - 1].click();
+        }
       });
     });
 
