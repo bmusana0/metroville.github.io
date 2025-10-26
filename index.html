@@ -99,6 +99,118 @@
       });
     });
   </script>
+  <!-- 🌟 Newsletter Subscribe Section -->
+<section id="newsletter" class="newsletter">
+  <h2>Subscribe to Our Newsletter</h2>
+  <p>Get the latest updates, project insights, and M&E resources straight to your inbox.</p>
+
+  <form id="subscribeForm">
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+
+  <p id="responseMessage"></p>
+</section>
+
+<style>
+  /* === Newsletter Styles === */
+  .newsletter {
+    text-align: center;
+    background: linear-gradient(135deg, #0077b6, #0096c7);
+    color: white;
+    padding: 50px 20px;
+    border-radius: 20px;
+    margin: 60px auto;
+    max-width: 650px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .newsletter h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .newsletter form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .newsletter input[type="email"] {
+    padding: 12px;
+    width: 70%;
+    max-width: 320px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .newsletter button {
+    background: #ff7b00;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+
+  .newsletter button:hover {
+    background: #ff9f1c;
+    transform: scale(1.05);
+  }
+
+  #responseMessage {
+    margin-top: 15px;
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  // === Newsletter Form Submission Script ===
+  document.getElementById("subscribeForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const responseMessage = document.getElementById("responseMessage");
+
+    if (!email) {
+      responseMessage.textContent = "⚠️ Please enter a valid email address.";
+      responseMessage.style.color = "yellow";
+      return;
+    }
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzMnLXsi6UHUWh0tf93nnSsdwudCXQjbemPG6bmqmLVXYYCpaWswiTv3sNQwE5xDlFO/exec";
+
+    try {
+      const res = await fetch(scriptURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email })
+      });
+
+      if (res.ok) {
+        responseMessage.textContent = "✅ Thank you for subscribing!";
+        responseMessage.style.color = "lime";
+        document.getElementById("subscribeForm").reset();
+      } else {
+        responseMessage.textContent = "⚠️ Something went wrong. Please try again.";
+        responseMessage.style.color = "orange";
+      }
+    } catch (err) {
+      responseMessage.textContent = "❌ Network error. Please check your connection.";
+      responseMessage.style.color = "red";
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
