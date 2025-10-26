@@ -177,108 +177,50 @@
   #responseMessage {
     margin-top: 15px;
     font-weight: 500;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-
-  #responseMessage.show {
-    opacity: 1;
-  }
-
-  /* === Mobile Responsiveness === */
-  @media (max-width: 600px) {
-    .newsletter input {
-      width: 90% !important;
-    }
-
-    .newsletter input[type="email"] {
-      width: 90% !important;
-    }
-
-    .newsletter form {
-      flex-direction: column;
-      gap: 15px;
-    }
   }
 </style>
 
 <script>
-  // === Newsletter Form Submission Script ===
-  document.getElementById("subscribeForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+document.getElementById("subscribeForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-    const surname = document.getElementById("surname").value.trim();
-    const givenName = document.getElementById("givenName").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const responseMessage = document.getElementById("responseMessage");
-    const button = document.querySelector("#subscribeForm button");
+  const surname = document.getElementById("surname").value.trim();
+  const givenName = document.getElementById("givenName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const responseMessage = document.getElementById("responseMessage");
 
-    // Simple validation
-    if (!surname || !givenName || !phone || !email) {
-      showMessage("⚠️ Please fill in all fields.", "yellow");
-      return;
-    }
+  if (!surname || !givenName || !phone || !email) {
+    responseMessage.textContent = "⚠️ Please fill in all fields.";
+    responseMessage.style.color = "yellow";
+    return;
+  }
 
-    // Email & Phone validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phonePattern = /^\+?\d{7,15}$/;
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzEQgoDiTrSpGuXfS5yNUPoNpzbuaO4t3MR8CgDPOapSK1wnMZZbF-kQ46ldmvM6LgA/exec";
 
-    if (!emailPattern.test(email)) {
-      showMessage("⚠️ Please enter a valid email address.", "yellow");
-      return;
-    }
+  try {
+    // Use mode 'no-cors' to prevent network errors due to CORS
+    await fetch(scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ surname, givenName, phone, email })
+    });
 
-    if (!phonePattern.test(phone)) {
-      showMessage("⚠️ Please enter a valid phone number.", "yellow");
-      return;
-    }
+    responseMessage.textContent = "✅ Thank you for subscribing!";
+    responseMessage.style.color = "lime";
+    document.getElementById("subscribeForm").reset();
 
-    // Disable button while submitting
-    button.disabled = true;
-    button.textContent = "Submitting...";
-
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzEQgoDiTrSpGuXfS5yNUPoNpzbuaO4t3MR8CgDPOapSK1wnMZZbF-kQ46ldmvM6LgA/exec";
-
-    try {
-      const res = await fetch(scriptURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          surname: surname,
-          givenName: givenName,
-          phone: phone,
-          email: email
-        })
-      });
-
-      if (res.ok) {
-        showMessage("✅ Thank you for subscribing!", "lime");
-        document.getElementById("subscribeForm").reset();
-      } else {
-        showMessage("⚠️ Something went wrong. Please try again.", "orange");
-      }
-    } catch (err) {
-      showMessage("❌ Network error. Please check your connection.", "red");
-    } finally {
-      button.disabled = false;
-      button.textContent = "Subscribe";
-    }
-
-    function showMessage(message, color) {
-      responseMessage.textContent = message;
-      responseMessage.style.color = color;
-      responseMessage.classList.remove("show");
-      void responseMessage.offsetWidth; // Trigger reflow
-      responseMessage.classList.add("show");
-    }
-  });
+  } catch (err) {
+    responseMessage.textContent = "❌ Network error. Please try again.";
+    responseMessage.style.color = "red";
+  }
+});
 </script>
-
-
 
 </body>
 </html>
+
 
 
 
