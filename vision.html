@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #0066cc;
-      --primary-dark: #004999;
+      --primary: #e74c3c;
+      --primary-dark: #c0392b;
       --secondary: #222;
       --light: #f9f9f9;
       --white: #ffffff;
@@ -214,7 +214,7 @@
     .nav-links a.active {
       background: var(--primary);
       color: var(--white);
-      box-shadow: 0 -4px 12px rgba(0, 102, 204, 0.3);
+      box-shadow: 0 -4px 12px rgba(231, 76, 60, 0.3);
     }
 
     .nav-links a.active::before {
@@ -296,14 +296,14 @@
     }
 
     .tab-btn:hover {
-      background: rgba(0, 102, 204, 0.1);
+      background: rgba(231, 76, 60, 0.1);
       transform: translateY(-2px);
     }
 
     .tab-btn.active {
       background: var(--primary);
       color: var(--white);
-      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
     }
 
     .tab-btn i {
@@ -345,7 +345,7 @@
       justify-content: center;
       margin-right: 1.5rem;
       flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
     }
 
     .content-icon i {
@@ -400,7 +400,7 @@
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+      box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
     }
 
     .value-title {
@@ -633,60 +633,28 @@
       transform: scale(1.1);
     }
 
-    .custom-color-picker {
-      margin-top: 1rem;
+    .color-option.red {
+      background-color: #e74c3c;
     }
 
-    .custom-color-picker label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: var(--secondary);
+    .color-option.blue {
+      background-color: #3498db;
     }
 
-    .color-input-group {
-      display: flex;
-      gap: 0.5rem;
+    .color-option.green {
+      background-color: #2ecc71;
     }
 
-    .color-input {
-      flex: 1;
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: inherit;
+    .color-option.purple {
+      background-color: #9b59b6;
     }
 
-    .color-apply {
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: var(--transition);
+    .color-option.orange {
+      background-color: #e67e22;
     }
 
-    .color-apply:hover {
-      background: var(--primary-dark);
-    }
-
-    .reset-colors {
-      margin-top: 1rem;
-      background: #f0f0f0;
-      color: var(--text);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: var(--transition);
-      width: 100%;
-    }
-
-    .reset-colors:hover {
-      background: #e0e0e0;
+    .color-option.teal {
+      background-color: #1abc9c;
     }
 
     @media (max-width: 1024px) {
@@ -731,7 +699,7 @@
 
       .nav-links a.active {
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
       }
 
       .mobile-menu-btn {
@@ -830,33 +798,25 @@
     <div class="color-toggle">
       <i class="fas fa-palette"></i>
     </div>
-    <h3><i class="fas fa-paint-brush"></i> Color Customization</h3>
+    <h3><i class="fas fa-paint-brush"></i> Color Theme</h3>
     
     <div class="color-options">
-      <div class="color-option active" style="background-color: #0066cc;" data-color="#0066cc"></div>
-      <div class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></div>
-      <div class="color-option" style="background-color: #e74c3c;" data-color="#e74c3c"></div>
-      <div class="color-option" style="background-color: #9b59b6;" data-color="#9b59b6"></div>
-      <div class="color-option" style="background-color: #f39c12;" data-color="#f39c12"></div>
-      <div class="color-option" style="background-color: #1abc9c;" data-color="#1abc9c"></div>
+      <div class="color-option red active" data-color="#e74c3c"></div>
+      <div class="color-option blue" data-color="#3498db"></div>
+      <div class="color-option green" data-color="#2ecc71"></div>
+      <div class="color-option purple" data-color="#9b59b6"></div>
+      <div class="color-option orange" data-color="#e67e22"></div>
+      <div class="color-option teal" data-color="#1abc9c"></div>
     </div>
     
-    <div class="custom-color-picker">
-      <label for="custom-color">Custom Color:</label>
-      <div class="color-input-group">
-        <input type="color" id="custom-color" class="color-input" value="#0066cc">
-        <button class="color-apply" id="apply-custom-color">Apply</button>
-      </div>
-    </div>
-    
-    <button class="reset-colors" id="reset-colors">Reset to Default</button>
+    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Select a color to change the website theme</p>
   </div>
 
   <header>
     <div class="logo-section">
       <div class="logo-container">
         <div class="logo-img">
-          <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex'">
+          <img src="logo.jpg" alt="METROVILLE EDGES Logo" onerror="this.style.display='none'">
         </div>
         
         <div class="logo-text">
@@ -1109,9 +1069,6 @@
     const colorCustomizer = document.querySelector('.color-customizer');
     const colorToggle = document.querySelector('.color-toggle');
     const colorOptions = document.querySelectorAll('.color-option');
-    const customColorInput = document.getElementById('custom-color');
-    const applyCustomColor = document.getElementById('apply-custom-color');
-    const resetColors = document.getElementById('reset-colors');
 
     // Toggle color customizer panel
     colorToggle.addEventListener('click', () => {
@@ -1127,38 +1084,7 @@
         option.classList.add('active');
         // Apply the color
         applyColor(option.getAttribute('data-color'));
-        // Update custom color input
-        customColorInput.value = option.getAttribute('data-color');
       });
-    });
-
-    // Apply custom color
-    applyCustomColor.addEventListener('click', () => {
-      applyColor(customColorInput.value);
-      // Update active color option
-      colorOptions.forEach(opt => {
-        if (opt.getAttribute('data-color') === customColorInput.value) {
-          opt.classList.add('active');
-        } else {
-          opt.classList.remove('active');
-        }
-      });
-    });
-
-    // Reset to default colors
-    resetColors.addEventListener('click', () => {
-      // Reset to default blue color
-      applyColor('#0066cc');
-      // Update active color option
-      colorOptions.forEach(opt => {
-        if (opt.getAttribute('data-color') === '#0066cc') {
-          opt.classList.add('active');
-        } else {
-          opt.classList.remove('active');
-        }
-      });
-      // Update custom color input
-      customColorInput.value = '#0066cc';
     });
 
     // Function to apply color changes
@@ -1206,8 +1132,6 @@
             opt.classList.remove('active');
           }
         });
-        // Update custom color input
-        customColorInput.value = savedPrimaryColor;
       }
     });
   </script>
