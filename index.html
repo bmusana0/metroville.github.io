@@ -177,6 +177,28 @@
   #responseMessage {
     margin-top: 15px;
     font-weight: 500;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  #responseMessage.show {
+    opacity: 1;
+  }
+
+  /* === Mobile Responsiveness === */
+  @media (max-width: 600px) {
+    .newsletter input {
+      width: 90% !important;
+    }
+
+    .newsletter input[type="email"] {
+      width: 90% !important;
+    }
+
+    .newsletter form {
+      flex-direction: column;
+      gap: 15px;
+    }
   }
 </style>
 
@@ -190,12 +212,31 @@
     const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
     const responseMessage = document.getElementById("responseMessage");
+    const button = document.querySelector("#subscribeForm button");
 
+    // Simple validation
     if (!surname || !givenName || !phone || !email) {
-      responseMessage.textContent = "⚠️ Please fill in all fields.";
-      responseMessage.style.color = "yellow";
+      showMessage("⚠️ Please fill in all fields.", "yellow");
       return;
     }
+
+    // Email & Phone validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\+?\d{7,15}$/;
+
+    if (!emailPattern.test(email)) {
+      showMessage("⚠️ Please enter a valid email address.", "yellow");
+      return;
+    }
+
+    if (!phonePattern.test(phone)) {
+      showMessage("⚠️ Please enter a valid phone number.", "yellow");
+      return;
+    }
+
+    // Disable button while submitting
+    button.disabled = true;
+    button.textContent = "Submitting...";
 
     const scriptURL = "https://script.google.com/macros/s/AKfycbwjnzYvJmdF_ob5CRKZNhjNE1TABGECFp6PNLkpJl0tutLNESK20pBN6JOHFu9c6bQ9/exec";
 
@@ -212,23 +253,33 @@
       });
 
       if (res.ok) {
-        responseMessage.textContent = "✅ Thank you for subscribing!";
-        responseMessage.style.color = "lime";
+        showMessage("✅ Thank you for subscribing!", "lime");
         document.getElementById("subscribeForm").reset();
       } else {
-        responseMessage.textContent = "⚠️ Something went wrong. Please try again.";
-        responseMessage.style.color = "orange";
+        showMessage("⚠️ Something went wrong. Please try again.", "orange");
       }
     } catch (err) {
-      responseMessage.textContent = "❌ Network error. Please check your connection.";
-      responseMessage.style.color = "red";
+      showMessage("❌ Network error. Please check your connection.", "red");
+    } finally {
+      button.disabled = false;
+      button.textContent = "Subscribe";
+    }
+
+    function showMessage(message, color) {
+      responseMessage.textContent = message;
+      responseMessage.style.color = color;
+      responseMessage.classList.remove("show");
+      void responseMessage.offsetWidth; // Trigger reflow
+      responseMessage.classList.add("show");
     }
   });
 </script>
 
 
+
 </body>
 </html>
+
 
 
 
