@@ -99,13 +99,16 @@
       });
     });
   </script>
-  <!-- 🌟 Newsletter Subscribe Section -->
+<!-- 🌟 Newsletter Subscribe Section -->
 <section id="newsletter" class="newsletter">
   <h2>Subscribe to Our Newsletter</h2>
   <p>Get the latest updates, project insights, and M&E resources straight to your inbox.</p>
 
   <form id="subscribeForm">
-    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <input type="text" id="surname" name="surname" placeholder="Surname" required>
+    <input type="text" id="givenName" name="givenName" placeholder="Given Name" required>
+    <input type="tel" id="phone" name="phone" placeholder="Telephone Number" required>
+    <input type="email" id="email" name="email" placeholder="Email Address" required>
     <button type="submit">Subscribe</button>
   </form>
 
@@ -121,7 +124,7 @@
     padding: 50px 20px;
     border-radius: 20px;
     margin: 60px auto;
-    max-width: 650px;
+    max-width: 700px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 
@@ -142,13 +145,17 @@
     gap: 10px;
   }
 
-  .newsletter input[type="email"] {
+  .newsletter input {
     padding: 12px;
-    width: 70%;
-    max-width: 320px;
+    width: 45%;
+    max-width: 300px;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
+  }
+
+  .newsletter input[type="email"] {
+    width: 60%;
   }
 
   .newsletter button {
@@ -177,22 +184,31 @@
   // === Newsletter Form Submission Script ===
   document.getElementById("subscribeForm").addEventListener("submit", async function(e) {
     e.preventDefault();
+
+    const surname = document.getElementById("surname").value.trim();
+    const givenName = document.getElementById("givenName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
     const responseMessage = document.getElementById("responseMessage");
 
-    if (!email) {
-      responseMessage.textContent = "⚠️ Please enter a valid email address.";
+    if (!surname || !givenName || !phone || !email) {
+      responseMessage.textContent = "⚠️ Please fill in all fields.";
       responseMessage.style.color = "yellow";
       return;
     }
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzMnLXsi6UHUWh0tf93nnSsdwudCXQjbemPG6bmqmLVXYYCpaWswiTv3sNQwE5xDlFO/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwjnzYvJmdF_ob5CRKZNhjNE1TABGECFp6PNLkpJl0tutLNESK20pBN6JOHFu9c6bQ9/exec";
 
     try {
       const res = await fetch(scriptURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({
+          surname: surname,
+          givenName: givenName,
+          phone: phone,
+          email: email
+        })
       });
 
       if (res.ok) {
@@ -210,7 +226,9 @@
   });
 </script>
 
+
 </body>
 </html>
+
 
 
