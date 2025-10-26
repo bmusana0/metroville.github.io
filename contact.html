@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="zOkRBKUMsuU4Gm9QPuFQUSjh8AJwSY9deebpvtIAMw" />
-  <title>Home - METROVILLE EDGES CO.LTD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - METROVILLE EDGES CO.LTD</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -192,75 +191,21 @@
       cursor: pointer;
     }
 
-    .hero {
+    .page-title {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
       position: relative;
-      height: 70vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.7);
-    }
-
-    .overlay-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: var(--white);
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 2rem;
-    }
-
-    .overlay-text h2 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-
-    .hero-button {
-      background-color: var(--primary);
-      color: var(--white);
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .hero-button:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    }
-
-    .services {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-
-    .services h2 {
-      text-align: center;
+    .page-title h2 {
       font-size: 2.2rem;
       color: var(--primary);
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       position: relative;
+      display: inline-block;
     }
 
-    .services h2::after {
+    .page-title h2::after {
       content: '';
       position: absolute;
       bottom: -10px;
@@ -271,146 +216,160 @@
       background-color: var(--primary);
     }
 
-    .service-boxes {
+    .page-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-intro h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-intro p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .service {
+    .contact-card {
       background: var(--white);
       border-radius: 12px;
-      overflow: hidden;
+      padding: 2rem;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      border-top: 4px solid var(--primary);
+      text-align: center;
     }
 
-    .service:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
-    .service img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(231, 76, 60, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
     }
 
-    .service-content {
+    .contact-icon i {
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .contact-card h3 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-info {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .contact-info li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .contact-info i {
+      color: var(--primary);
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info a {
+      color: var(--text);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary);
+    }
+
+    .contact-details {
+      margin-top: 2rem;
       padding: 1.5rem;
+      background: rgba(231, 76, 60, 0.05);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
     }
 
-    .service h3 {
+    .contact-details h3 {
       color: var(--primary);
       margin-bottom: 1rem;
       font-size: 1.3rem;
     }
 
-    .service p {
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-      color: var(--white);
-      padding: 4rem 1rem;
-      text-align: center;
-      margin-top: 4rem;
-    }
-
-    .cta h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-button {
-      background-color: var(--white);
-      color: var(--primary);
-      border: 2px solid var(--white);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .cta-button:hover {
-      background-color: transparent;
-      color: var(--white);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    }
-
-    .newsletter {
-      background-color: var(--white);
-      padding: 4rem 1rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .newsletter h2 {
-      font-size: 2rem;
-      color: var(--primary);
+    .contact-details p {
       margin-bottom: 1rem;
+      color: #555;
     }
 
-    .newsletter p {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      color: #666;
-      font-size: 1.1rem;
-    }
-
-    .newsletter-form {
+    .social-contact {
       display: flex;
-      justify-content: center;
       gap: 1rem;
-      flex-wrap: wrap;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .newsletter-form input[type="email"] {
-      padding: 0.8rem 1.2rem;
-      border-radius: 50px;
-      border: 1px solid #ddd;
-      font-size: 1rem;
-      flex-grow: 1;
-      min-width: 250px;
-    }
-
-    .newsletter-form button {
-      background-color: var(--primary);
-      color: var(--white);
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .newsletter-form button:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    #newsletterMessage {
       margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .social-contact a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: var(--transition);
+      text-decoration: none;
+      color: var(--text);
       font-weight: 500;
     }
 
-    .visually-hidden {
-      position: absolute;
-      left: -10000px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+    .social-contact a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: var(--primary);
+    }
+
+    .social-contact i {
+      color: var(--primary);
     }
 
     footer {
@@ -611,18 +570,6 @@
       background-color: #1abc9c;
     }
 
-    /* Scroll Reveal Animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -648,6 +595,10 @@
         font-size: 2rem;
       }
 
+      .page-title h2 {
+        font-size: 1.8rem;
+      }
+
       .logo-container {
         flex-direction: column;
         text-align: center;
@@ -663,22 +614,13 @@
         text-align: center;
       }
 
-      .overlay-text h2 {
-        font-size: 2.2rem;
-      }
-
-      .service-boxes {
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .newsletter-form {
+      .social-contact {
         flex-direction: column;
         align-items: center;
-      }
-
-      .newsletter-form input[type="email"] {
-        width: 100%;
-        margin-bottom: 1rem;
       }
 
       .color-customizer {
@@ -691,16 +633,16 @@
         font-size: 1.8rem;
       }
 
+      .page-title h2 {
+        font-size: 1.6rem;
+      }
+
       .logo-text h1 {
         font-size: 1.8rem;
       }
 
-      .overlay-text h2 {
-        font-size: 1.8rem;
-      }
-
-      .services h2, .cta h2, .newsletter h2 {
-        font-size: 1.8rem;
+      .container {
+        padding: 1.5rem;
       }
 
       .color-customizer {
@@ -744,8 +686,8 @@
         </div>
       </div>
     </div>
-    <h1>Your Partner in Results-Based Monitoring & Evaluation</h1>
-    <p>Driving innovation and excellence in every solution we deliver</p>
+    <h1>Contact Us</h1>
+    <p>Get in touch with our team for inquiries, collaborations, or support</p>
   </header>
 
   <nav>
@@ -755,100 +697,96 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="vision.html">Mission & Vision</a>
         <a href="Ourteam.html">Our Team</a>
-        <a href="contact.html">Contact</a>
         <a href="feedback.html">Feedback</a>
+        <a href="contact.html" class="active">Contact</a>
       </div>
     </div>
   </nav>
 
-  <section class="hero reveal">
-    <img src="hero.jpg" alt="Team working together in collaboration" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'">
-    <div class="overlay-text">
-      <h2>Innovate. Evaluate. Impact.</h2>
-      <button class="hero-button" onclick="location.href='about.html'">Learn More</button>
+  <div class="page-title">
+    <h2>Get In Touch</h2>
+    <p>We're here to answer your questions and discuss how we can work together</p>
+  </div>
+
+  <div class="container">
+    <div class="contact-intro">
+      <h2>Our Contact Information</h2>
+      <p>Reach out to us through any of the following channels. Our team is ready to assist you with your monitoring and evaluation needs.</p>
     </div>
-  </section>
 
-  <section class="services reveal">
-    <h2>What We Do</h2>
-    <div class="service-boxes">
-      <div class="service">
-        <img src="service1.jpg" alt="Monitoring tools" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'">
-        <div class="service-content">
-          <h3>Monitoring</h3>
-          <p>Tools to track project performance effectively and transparently.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
         </div>
+        <h3>Email Us</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:infometrovilleedges@gmail.com">infometrovilleedges@gmail.com</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:bmusana0@gmail.com">bmusana0@gmail.com</a>
+          </li>
+        </ul>
       </div>
-      <div class="service">
-        <img src="service2.jpg" alt="Survey collection" onerror="this.src='https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80'">
-        <div class="service-content">
-          <h3>Baseline, Midline, and Endline Surveys</h3>
-          <p>Conducting high-quality evaluations to assess impact and inform decision-making.</p>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
         </div>
+        <h3>Call Us</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+256776080634">+256 776 080 634</a>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+256772487189">+256 772 487 189</a>
+          </li>
+        </ul>
       </div>
-      <div class="service">
-        <img src="service3.jpg" alt="M&E training session" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'">
-        <div class="service-content">
-          <h3>Capacity Building and Training</h3>
-          <p>Offering practical training and mentorship to strengthen institutional M&E capacity.</p>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
         </div>
-      </div>
-      <div class="service">
-        <img src="service-data.jpg" alt="Data visualization dashboard" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'">
-        <div class="service-content">
-          <h3>Data Management and Analysis</h3>
-          <p>Providing data collection, analysis, visualization, and reporting services using modern tools and technologies.</p>
-        </div>
-      </div>
-      <div class="service">
-        <img src="service-planning.jpg" alt="Planning and design documents" onerror="this.src='https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'">
-        <div class="service-content">
-          <h3>Project Planning and Design</h3>
-          <p>Assisting organizations in developing robust, evidence-informed project frameworks and proposals.</p>
-        </div>
-      </div>
-      <div class="service">
-        <img src="service-strategy.jpg" alt="Strategic planning session" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'">
-        <div class="service-content">
-          <h3>Strategic Planning and Organizational Development</h3>
-          <p>Supporting institutions in aligning their vision, strategies, and operations for greater impact.</p>
-        </div>
+        <h3>Visit Us</h3>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Address:</strong><br>
+              P.O Box 7135, Nakawa<br>
+              Kampala, Uganda
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <section class="cta reveal">
-    <h2>Let's Build Smarter Solutions Together</h2>
-    <button class="cta-button" onclick="location.href='contact.html'">Contact Us</button>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter reveal">
-    <h2>Stay Updated</h2>
-    <p>Subscribe to our newsletter for insights, updates, and opportunities from METROVILLE EDGES CO.LTD.</p>
-
-    <form class="newsletter-form"
-          action="https://script.google.com/macros/s/AKfycbxZIWxTvmu5gyhk7thVsSC4LI-LXxMcjBPhlQyuPOTvGgFLNO9J-eAND0ar4GC7-qLL8A/exec"
-          method="POST"
-          target="hidden_iframe"
-          onsubmit="return showThankYou();">
-      <label for="newsletterEmail" class="visually-hidden">Email address</label>
-      <input id="newsletterEmail" 
-             type="email" 
-             name="email" 
-             placeholder="Enter your email" 
-             required 
-             aria-label="Email address" />
-      <button type="submit">Subscribe</button>
-    </form>
-
-    <p id="newsletterMessage" aria-live="polite"></p>
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
-  </section>
+    <div class="contact-details">
+      <h3>Connect With Us</h3>
+      <p>Follow us on social media or connect through messaging platforms for quick responses.</p>
+      
+      <div class="social-contact">
+        <a href="https://www.linkedin.com/company/metroville-edge" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/256772487189" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-content">
@@ -918,26 +856,6 @@
         document.querySelector('.nav-links').classList.remove('active');
       });
     });
-
-    // Scroll Reveal Animation
-    const reveals = document.querySelectorAll('.reveal');
-    window.addEventListener('scroll', () => {
-      reveals.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (top < windowHeight - 100) {
-          section.classList.add('active');
-        }
-      });
-    });
-
-    // Newsletter Thank You Message
-    function showThankYou() {
-      const message = document.getElementById('newsletterMessage');
-      message.textContent = "Thank you for subscribing!";
-      message.style.color = "green";
-      return true;
-    }
 
     // Color Customization Functionality
     const colorCustomizer = document.querySelector('.color-customizer');
@@ -1009,5 +927,6 @@
       }
     });
   </script>
+
 </body>
 </html>
